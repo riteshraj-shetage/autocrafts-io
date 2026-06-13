@@ -1,0 +1,12 @@
+# action.yml
+name: 'icommit'
+description: 'A native GitHub Action that synthesizes your raw Git activity into verified artifacts.'
+author: 'riteshraj'
+
+branding:
+  icon: 'terminal' 
+  color: 'white'  
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile' 
