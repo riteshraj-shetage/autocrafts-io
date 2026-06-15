@@ -41,7 +41,7 @@ export default function App() {
             <span className={`animate-ping absolute inline-flex h-full w-full opacity-75 ${!profile ? 'bg-amber-400' : 'bg-emerald-400'}`}></span>
             <span className={`relative inline-flex h-2 w-2 ${!profile ? 'bg-amber-500' : 'bg-emerald-500'}`}></span>
           </span>
-          <span>icommit - {!profile ? 'Syncing...' : 'Test page'}</span>
+          <span>autocrafts-io - {!profile ? 'Syncing...' : 'Test page'}</span>
         </div>
 
         {profile?.avatarUrl && (
@@ -70,12 +70,12 @@ export default function App() {
 
         <div className="pt-4">
           <a 
-            href="https://github.com/riteshraj-shetage/icommit-io"
+            href="https://github.com/riteshraj-shetage/autocrafts-io"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block border border-emerald-900/60 bg-emerald-950/10 px-6 py-3 font-mono text-xs md:text-sm text-emerald-400 tracking-wider hover:bg-emerald-950/20 hover:border-emerald-500/40 transition-colors duration-200 rounded-none"
           >
-            @riteshraj-shetage/icommit-io
+            @riteshraj-shetage/autocrafts-io
           </a>
         </div>
 

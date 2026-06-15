@@ -1,12 +1,33 @@
-# action.yml
-name: 'icommit-io'
+# action.yml [draft]
+
+name: 'GitHub AutoCrafts IO'
 description: 'A native GitHub Action that synthesizes your raw Git activity into verified artifacts.'
 author: '@riteshraj-shetage'
 
 branding:
-  icon: 'terminal' 
-  color: 'green'  
+  icon: 'terminal'
+  color: 'gray-dark'
+
+inputs:
+  github-token:
+    description: 'Repository token.'
+    required: false
+    default: ${{ github.token }}
 
 runs:
-  using: 'docker'
-  image: 'Dockerfile' 
+  using: 'composite'
+  steps:
+    - name: Provision Runtime Environment
+      uses: oven-sh/setup-bun@v2
+      with:
+        bun-version: latest
+
+    - name: Install Core Dependencies
+      run: bun install --frozen-lockfile
+      shell: bash
+
+    - name: Execute Core Engine
+      run: bun run core
+      shell: bash
+      env:
+        GITHUB_TOKEN: ${{ inputs.github-token }}
