@@ -12,10 +12,10 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Execute containerized test
+      - name: Execute Native Action
         uses: ./
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Verify data
+      - name: Verify Output
         run: cat ui/public/gh-data.json

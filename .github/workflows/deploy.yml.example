@@ -5,14 +5,47 @@ name: Deploy Workflow
 on:
   push:
     branches: [ main ]
-  
   workflow_dispatch:
+
+# Required strictly for GitHub Pages deployment
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+      
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-    # to be continued with deployment steps...
+      # 1. Run the Engine to generate json files
+      - name: Execute Native Intelligence Engine
+        uses: ./
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      # 2. Provision Bun for the frontend build
+      - name: Provision Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      # 3. Compile the Vite/React UI 
+      - name: Build Engineered Truth UI
+        run: |
+          bun install --frozen-lockfile
+          bun run build
+
+      # 4. Package the Vite output 
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './dist' 
+
+      # to be continued with deployment steps...
