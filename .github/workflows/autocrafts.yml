@@ -29,7 +29,7 @@ jobs:
         uses: riteshraj-shetage/octofetch@v1.0.0
         with:
           github_token: ${{ secrets.GH_PAT }}
-          query_file: .github/autocrafts.query.graphql
+          query_file: .github/octofetch/autocrafts.query.graphql
           variables: '{"owner": "${{ github.repository_owner }}"}'
           output_file: src/data/sourced.json
 
