@@ -5,8 +5,8 @@ on:
     branches: [ "main" ]
     paths-ignore:
       - "src/data/**" 
-  schedule:
-    - cron: '0 0 * * *' # Automatic daily deployment at midnight UTC
+  # schedule:
+  #   - cron: '0 0 * * *' # Automatic daily deployment at midnight UTC
   workflow_dispatch:
 
 permissions:
