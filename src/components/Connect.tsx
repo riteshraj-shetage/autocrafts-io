@@ -45,7 +45,7 @@ export default function ConnectSec({ username, website, socialLinks }: ConnectPr
           href={url}
           target="_blank"
           rel="noopener noreferrer"
-          className="group bg-background p-4 flex items-center gap-4 hover:bg-muted transition-colors border border-border -mr-px -mb-px"
+          className="group bg-background p-3 sm:p-4 flex items-center gap-3 sm:gap-4 hover:bg-muted transition-colors border border-border -mr-px -mb-px"
         >
           <div 
             className="flex items-center justify-center w-8 h-8 border border-muted-foreground/80 transition-colors shrink-0 bg-background"
@@ -55,10 +55,10 @@ export default function ConnectSec({ username, website, socialLinks }: ConnectPr
           </div>
           
           <div className="flex flex-col min-w-0 flex-1">
-            <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
+            <span className="font-mono text-[9px] sm:text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
               {provider}
             </span>
-            <span className="font-mono text-sm text-foreground truncate mt-1">
+            <span className="font-mono text-xs sm:text-sm text-foreground truncate mt-0.5 sm:mt-1">
               {handle}
             </span>
           </div>
@@ -68,7 +68,7 @@ export default function ConnectSec({ username, website, socialLinks }: ConnectPr
       ))}
       
       {links.length % 2 === 1 && (
-        <div className="bg-background hidden md:block -mr-px -mb-px" aria-hidden />
+        <div className="bg-background hidden md:block border border-border -mr-px -mb-px" aria-hidden />
       )}
     </div>
   );

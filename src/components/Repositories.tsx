@@ -37,7 +37,7 @@ export default function Repositories({ repositories }: RepositoriesProps) {
             href={websiteUrl || repo.url || "#"}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-background p-4 group hover:bg-muted transition-colors flex flex-col justify-between border border-border -mr-px -mb-px"
+            className="bg-background p-3 sm:p-4 group hover:bg-muted transition-colors flex flex-col justify-between border border-border -mr-px -mb-px"
           >
             <div className="flex items-start justify-between gap-3">
               <h3 
@@ -55,30 +55,30 @@ export default function Repositories({ repositories }: RepositoriesProps) {
               </p>
             )}
 
-            <div className="mt-4 flex items-center gap-8 font-mono text-xs text-muted-foreground flex-wrap">
+            <div className="mt-4 flex items-center gap-4 sm:gap-6 font-mono text-[11px] sm:text-xs text-muted-foreground flex-wrap">
               {topLangName && 
                 <span className="inline-flex items-center gap-1.5">
                   <span
-                    className="w-2 h-2"
+                    className="w-2 h-2 shrink-0"
                     style={{ backgroundColor: topLangColor || 'transparent' }}
                   />
-                  {topLangName}
+                  <span className="truncate max-w-[100px] sm:max-w-[150px]">{topLangName}</span>
                 </span>
               }
 
               {repo.stargazerCount > 0 && (
-                <span><Star className="w-3 h-3 inline-flex mb-0.5 mr-1"/>{repo.stargazerCount}</span>
+                <span className="flex items-center"><Star className="w-3 h-3 mb-0.5 mr-1 shrink-0"/>{repo.stargazerCount}</span>
               )}
 
               {repo.forksCount > 0 && (
-                <span><GitFork className="w-3 h-3 inline-flex mb-0.5 mr-1"/>{repo.forksCount}</span>
+                <span className="flex items-center"><GitFork className="w-3 h-3 mb-0.5 mr-1 shrink-0"/>{repo.forksCount}</span>
               )}
             </div>
           </a>
         );
       })}
       {topRepos.length % 2 === 1 && (
-        <div className="bg-background hidden md:block -mr-px -mb-px" aria-hidden />
+        <div className="bg-background hidden md:block border border-border -mr-px -mb-px" aria-hidden />
       )}
     </div>
   );

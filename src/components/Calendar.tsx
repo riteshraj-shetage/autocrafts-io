@@ -16,7 +16,7 @@ export default function Calendar({ contributions }: NativeLedgerProps) {
   const startDayOfWeek = firstDate.getUTCDay();
 
   const emptyCells = Array.from({ length: startDayOfWeek }).map((_, i) => (
-    <div key={`empty-${i}`} className="w-2 h-2 bg-transparent" />
+    <div key={`empty-${i}`} className="w-2 h-2 bg-transparent shrink-0" />
   ));
 
   const monthLabels: { label: string; colIndex: number }[] = [];
@@ -51,17 +51,17 @@ export default function Calendar({ contributions }: NativeLedgerProps) {
   };
 
   return (
-    <div className="mt-10 border border-border bg-background px-2 py-1 relative w-full max-w-3xl">
+    <div className="mt-6 sm:mt-10 border border-border bg-background px-2 py-1 relative w-full max-w-full sm:max-w-3xl">
       
-      <div className="absolute -top-2.5 right-4 bg-background px-2 font-mono text-[10px] uppercase tracking-widest text-muted-foreground flex items-center gap-2">
+      <div className="absolute -top-2.5 right-2 sm:right-4 bg-background px-2 font-mono text-[9px] sm:text-[10px] uppercase tracking-widest text-muted-foreground flex items-center gap-2">
         Contributions
       </div>
 
-      <div className="w-full overflow-x-auto pt-6 pb-2 pl-1 scrollbar-thin scrollbar-thumb-border scrollbar-track-transparent">
+      <div className="w-full max-w-full overflow-x-auto pt-6 pb-2 pl-1 scrollbar-thin scrollbar-thumb-border scrollbar-track-transparent">
         
         <div className="flex gap-2 min-w-max">
           
-          <div className="flex flex-col gap-0.75 text-[10px] text-muted-foreground font-mono">
+          <div className="flex flex-col gap-0.75 text-[10px] text-muted-foreground font-mono shrink-0">
             <div className="h-2"></div> {/* Sun */}
             <div className="h-2 leading-2">Mon</div> 
             <div className="h-2"></div> {/* Tue */}
@@ -71,7 +71,7 @@ export default function Calendar({ contributions }: NativeLedgerProps) {
             <div className="h-2"></div> {/* Sat */}
           </div>
 
-          <div className="flex flex-col relative">
+          <div className="flex flex-col relative shrink-0">
             
             <div className="absolute -top-5 left-0 w-full h-5 text-[10px] text-muted-foreground font-mono">
               {monthLabels.map((m, i) => (
@@ -92,7 +92,7 @@ export default function Calendar({ contributions }: NativeLedgerProps) {
                 <div
                   key={day.date}
                   title={`${day.count} contributions on ${day.date}`}
-                  className={`w-2 h-2 transition-colors hover:ring-1 hover:ring-terminal-fg hover:ring-offset-1 hover:ring-offset-background ${getLevelClass(day.level)}`}
+                  className={`w-2 h-2 shrink-0 transition-colors hover:ring-1 hover:ring-terminal-fg hover:ring-offset-1 hover:ring-offset-background ${getLevelClass(day.level)}`}
                 />
               ))}
             </div>

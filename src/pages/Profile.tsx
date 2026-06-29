@@ -10,7 +10,6 @@ import Connect from "../components/Connect";
 
 import rawTelemetry from "../data/sourced.json";
 
-
 import {
   forgeProfile,
   forgeStats,
@@ -23,11 +22,13 @@ import {
 
 function ProfileSection({ icon: Icon, title, children }: { icon: ComponentType<{ className?: string }>; title: string; children: ReactNode }) {
   return (
-    <section className="mt-16">
-      <div className="flex items-baseline gap-3 mb-6">
-        <Icon className="w-4 h-4 text-muted-foreground" />
+    <section className="mt-10 sm:mt-16">
+      <div className="flex items-center gap-3 mb-5 sm:mb-6">
+        <Icon className="w-4 h-4 text-muted-foreground shrink-0" />
         <div className="h-px flex-1 bg-border" />
-        <h2 className="font-mono text-xs uppercase tracking-[0.25em] text-foreground">{title}</h2>
+        <h2 className="font-mono text-[10px] sm:text-xs uppercase tracking-[0.25em] text-foreground shrink-0 text-right">
+          {title}
+        </h2>
       </div>
       {children}
     </section>
@@ -45,7 +46,7 @@ export default function Profile() {
 
   return (
     <Layout username={profile.login} starsCount={totalStars} forkCount={totalForks}>
-      <div className="pt-8 pb-16">
+      <div className="pt-2 sm:pt-8 pb-10 sm:pb-16">
         
         <Overview 
           profile={profile} 
