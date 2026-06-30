@@ -24,7 +24,7 @@
     },
     "contributionsCollection": {
       "contributionCalendar": {
-        "totalContributions": 1687,
+        "totalContributions": 1688,
         "weeks": [
           {
             "contributionDays": [
@@ -2068,7 +2068,7 @@
               },
               {
                 "date": "2026-06-30",
-                "contributionCount": 4,
+                "contributionCount": 5,
                 "contributionLevel": "FIRST_QUARTILE"
               }
             ]
@@ -2077,7 +2077,7 @@
       }
     },
     "repositories": {
-      "totalCount": 41,
+      "totalCount": 22,
       "nodes": [
         {
           "id": "R_kgDORvqJ6A",
@@ -2087,7 +2087,7 @@
           "homepageUrl": "",
           "stargazerCount": 0,
           "forkCount": 0,
-          "pushedAt": "2026-06-30T09:25:43Z",
+          "pushedAt": "2026-06-30T09:29:46Z",
           "primaryLanguage": {
             "name": "TypeScript",
             "color": "#3178c6"
@@ -2133,7 +2133,7 @@
           "homepageUrl": "https://riteshrajshetage.me",
           "stargazerCount": 0,
           "forkCount": 0,
-          "pushedAt": "2026-06-30T09:24:40Z",
+          "pushedAt": "2026-06-30T09:26:01Z",
           "primaryLanguage": {
             "name": "HTML",
             "color": "#e34c26"
@@ -2141,7 +2141,7 @@
           "languages": {
             "edges": [
               {
-                "size": 667418,
+                "size": 667400,
                 "node": {
                   "name": "HTML",
                   "color": "#e34c26"
@@ -2176,31 +2176,6 @@
           }
         },
         {
-          "id": "R_kgDOR1rwWw",
-          "name": "claw-on",
-          "description": null,
-          "url": "https://github.com/riteshraj-shetage/claw-on",
-          "homepageUrl": null,
-          "stargazerCount": 0,
-          "forkCount": 0,
-          "pushedAt": "2026-06-16T12:58:44Z",
-          "primaryLanguage": {
-            "name": "TypeScript",
-            "color": "#3178c6"
-          },
-          "languages": {
-            "edges": [
-              {
-                "size": 61139,
-                "node": {
-                  "name": "TypeScript",
-                  "color": "#3178c6"
-                }
-              }
-            ]
-          }
-        },
-        {
           "id": "R_kgDOSsV5ng",
           "name": "brut-arch",
           "description": null,
@@ -2220,59 +2195,6 @@
                 "node": {
                   "name": "Shell",
                   "color": "#89e051"
-                }
-              }
-            ]
-          }
-        },
-        {
-          "id": "R_kgDOSAHLXg",
-          "name": "icommit-demo",
-          "description": null,
-          "url": "https://github.com/riteshraj-shetage/icommit-demo",
-          "homepageUrl": null,
-          "stargazerCount": 0,
-          "forkCount": 0,
-          "pushedAt": "2026-06-14T15:19:26Z",
-          "primaryLanguage": {
-            "name": "TypeScript",
-            "color": "#3178c6"
-          },
-          "languages": {
-            "edges": [
-              {
-                "size": 206402,
-                "node": {
-                  "name": "TypeScript",
-                  "color": "#3178c6"
-                }
-              },
-              {
-                "size": 194383,
-                "node": {
-                  "name": "Python",
-                  "color": "#3572A5"
-                }
-              },
-              {
-                "size": 6517,
-                "node": {
-                  "name": "CSS",
-                  "color": "#663399"
-                }
-              },
-              {
-                "size": 5310,
-                "node": {
-                  "name": "JavaScript",
-                  "color": "#f1e05a"
-                }
-              },
-              {
-                "size": 855,
-                "node": {
-                  "name": "HTML",
-                  "color": "#e34c26"
                 }
               }
             ]
@@ -2325,45 +2247,6 @@
           }
         },
         {
-          "id": "R_kgDOQyNKbA",
-          "name": "eduplus-cli",
-          "description": null,
-          "url": "https://github.com/riteshraj-shetage/eduplus-cli",
-          "homepageUrl": null,
-          "stargazerCount": 0,
-          "forkCount": 0,
-          "pushedAt": "2026-06-13T04:39:37Z",
-          "primaryLanguage": {
-            "name": "Python",
-            "color": "#3572A5"
-          },
-          "languages": {
-            "edges": [
-              {
-                "size": 67033,
-                "node": {
-                  "name": "Python",
-                  "color": "#3572A5"
-                }
-              }
-            ]
-          }
-        },
-        {
-          "id": "R_kgDOSk_1qg",
-          "name": "arch-hypr",
-          "description": null,
-          "url": "https://github.com/riteshraj-shetage/arch-hypr",
-          "homepageUrl": null,
-          "stargazerCount": 0,
-          "forkCount": 0,
-          "pushedAt": "2026-05-22T14:15:52Z",
-          "primaryLanguage": null,
-          "languages": {
-            "edges": []
-          }
-        },
-        {
           "id": "R_kgDOSfEF3Q",
           "name": "tastefu",
           "description": null,
@@ -2378,20 +2261,6 @@
           }
         },
         {
-          "id": "R_kgDOSfAI8Q",
-          "name": "arch-bsw",
-          "description": null,
-          "url": "https://github.com/riteshraj-shetage/arch-bsw",
-          "homepageUrl": "",
-          "stargazerCount": 0,
-          "forkCount": 0,
-          "pushedAt": "2026-05-16T08:19:07Z",
-          "primaryLanguage": null,
-          "languages": {
-            "edges": []
-          }
-        },
-        {
           "id": "R_kgDORgz5Zg",
           "name": "py-logs",
           "description": null,
@@ -2400,45 +2269,6 @@
           "stargazerCount": 0,
           "forkCount": 1,
           "pushedAt": "2026-04-27T02:23:35Z",
-          "primaryLanguage": {
-            "name": "Python",
-            "color": "#3572A5"
-          },
-          "languages": {
-            "edges": [
-              {
-                "size": 147243,
-                "node": {
-                  "name": "Python",
-                  "color": "#3572A5"
-                }
-              },
-              {
-                "size": 31661,
-                "node": {
-                  "name": "HTML",
-                  "color": "#e34c26"
-                }
-              },
-              {
-                "size": 1724,
-                "node": {
-                  "name": "CSS",
-                  "color": "#663399"
-                }
-              }
-            ]
-          }
-        },
-        {
-          "id": "R_kgDORRpFdA",
-          "name": "py-works",
-          "description": null,
-          "url": "https://github.com/riteshraj-shetage/py-works",
-          "homepageUrl": null,
-          "stargazerCount": 0,
-          "forkCount": 0,
-          "pushedAt": "2026-04-27T02:07:38Z",
           "primaryLanguage": {
             "name": "Python",
             "color": "#3572A5"
@@ -2541,31 +2371,6 @@
           }
         },
         {
-          "id": "R_kgDORRpqEA",
-          "name": "zero-hassle",
-          "description": null,
-          "url": "https://github.com/riteshraj-shetage/zero-hassle",
-          "homepageUrl": null,
-          "stargazerCount": 0,
-          "forkCount": 0,
-          "pushedAt": "2026-04-09T15:56:14Z",
-          "primaryLanguage": {
-            "name": "Shell",
-            "color": "#89e051"
-          },
-          "languages": {
-            "edges": [
-              {
-                "size": 26968,
-                "node": {
-                  "name": "Shell",
-                  "color": "#89e051"
-                }
-              }
-            ]
-          }
-        },
-        {
           "id": "R_kgDOQcH5yw",
           "name": "get-ntfyd",
           "description": "(WIP) A drop-in notification gateway for apps, powered by ntfy",
@@ -2606,52 +2411,6 @@
                 "node": {
                   "name": "Dockerfile",
                   "color": "#384d54"
-                }
-              }
-            ]
-          }
-        },
-        {
-          "id": "R_kgDORmIwgA",
-          "name": "dot-phile",
-          "description": "i know exactly what I'm doing",
-          "url": "https://github.com/riteshraj-shetage/dot-phile",
-          "homepageUrl": null,
-          "stargazerCount": 0,
-          "forkCount": 0,
-          "pushedAt": "2026-03-13T13:20:21Z",
-          "primaryLanguage": null,
-          "languages": {
-            "edges": []
-          }
-        },
-        {
-          "id": "R_kgDOQfLscA",
-          "name": "academix",
-          "description": null,
-          "url": "https://github.com/riteshraj-shetage/academix",
-          "homepageUrl": "",
-          "stargazerCount": 0,
-          "forkCount": 0,
-          "pushedAt": "2026-03-10T05:52:25Z",
-          "primaryLanguage": {
-            "name": "PHP",
-            "color": "#4F5D95"
-          },
-          "languages": {
-            "edges": [
-              {
-                "size": 246370,
-                "node": {
-                  "name": "PHP",
-                  "color": "#4F5D95"
-                }
-              },
-              {
-                "size": 7269,
-                "node": {
-                  "name": "CSS",
-                  "color": "#663399"
                 }
               }
             ]
@@ -2711,63 +2470,6 @@
           }
         },
         {
-          "id": "R_kgDOQ2MykQ",
-          "name": "ntfy-caddy-compose",
-          "description": "“Dockerized ntfy server with Caddy, backups, and full documentation for replicable setups.”",
-          "url": "https://github.com/riteshraj-shetage/ntfy-caddy-compose",
-          "homepageUrl": null,
-          "stargazerCount": 0,
-          "forkCount": 0,
-          "pushedAt": "2026-02-14T17:13:12Z",
-          "primaryLanguage": {
-            "name": "Shell",
-            "color": "#89e051"
-          },
-          "languages": {
-            "edges": [
-              {
-                "size": 11509,
-                "node": {
-                  "name": "Shell",
-                  "color": "#89e051"
-                }
-              },
-              {
-                "size": 1028,
-                "node": {
-                  "name": "Makefile",
-                  "color": "#427819"
-                }
-              }
-            ]
-          }
-        },
-        {
-          "id": "R_kgDOQC96NQ",
-          "name": "web-statusd",
-          "description": "Your pal for monitoring and reporting website uptime and status",
-          "url": "https://github.com/riteshraj-shetage/web-statusd",
-          "homepageUrl": "",
-          "stargazerCount": 0,
-          "forkCount": 0,
-          "pushedAt": "2026-01-22T06:53:41Z",
-          "primaryLanguage": {
-            "name": "HTML",
-            "color": "#e34c26"
-          },
-          "languages": {
-            "edges": [
-              {
-                "size": 18368,
-                "node": {
-                  "name": "HTML",
-                  "color": "#e34c26"
-                }
-              }
-            ]
-          }
-        },
-        {
           "id": "R_kgDOQ5vaSQ",
           "name": "cards-crudapi",
           "description": null,
@@ -2787,77 +2489,6 @@
                 "node": {
                   "name": "Python",
                   "color": "#3572A5"
-                }
-              }
-            ]
-          }
-        },
-        {
-          "id": "R_kgDOPigyVQ",
-          "name": "edusync",
-          "description": "Modular commands. Clean output. No distractions.",
-          "url": "https://github.com/riteshraj-shetage/edusync",
-          "homepageUrl": "",
-          "stargazerCount": 0,
-          "forkCount": 0,
-          "pushedAt": "2026-01-13T17:19:30Z",
-          "primaryLanguage": {
-            "name": "Python",
-            "color": "#3572A5"
-          },
-          "languages": {
-            "edges": [
-              {
-                "size": 14617,
-                "node": {
-                  "name": "Python",
-                  "color": "#3572A5"
-                }
-              }
-            ]
-          }
-        },
-        {
-          "id": "R_kgDOQif_9g",
-          "name": "sonicave",
-          "description": null,
-          "url": "https://github.com/riteshraj-shetage/sonicave",
-          "homepageUrl": "https://sonicave.lovable.app",
-          "stargazerCount": 0,
-          "forkCount": 0,
-          "pushedAt": "2026-01-02T07:32:04Z",
-          "primaryLanguage": {
-            "name": "TypeScript",
-            "color": "#3178c6"
-          },
-          "languages": {
-            "edges": [
-              {
-                "size": 326917,
-                "node": {
-                  "name": "TypeScript",
-                  "color": "#3178c6"
-                }
-              },
-              {
-                "size": 3835,
-                "node": {
-                  "name": "CSS",
-                  "color": "#663399"
-                }
-              },
-              {
-                "size": 2472,
-                "node": {
-                  "name": "HTML",
-                  "color": "#e34c26"
-                }
-              },
-              {
-                "size": 846,
-                "node": {
-                  "name": "JavaScript",
-                  "color": "#f1e05a"
                 }
               }
             ]
@@ -2886,20 +2517,6 @@
                 }
               }
             ]
-          }
-        },
-        {
-          "id": "R_kgDOQvCZAw",
-          "name": "ollama-runtime",
-          "description": null,
-          "url": "https://github.com/riteshraj-shetage/ollama-runtime",
-          "homepageUrl": "",
-          "stargazerCount": 0,
-          "forkCount": 0,
-          "pushedAt": "2025-12-26T05:51:37Z",
-          "primaryLanguage": null,
-          "languages": {
-            "edges": []
           }
         },
         {
@@ -2967,20 +2584,6 @@
           }
         },
         {
-          "id": "R_kgDOQk7w8Q",
-          "name": "mern-made",
-          "description": null,
-          "url": "https://github.com/riteshraj-shetage/mern-made",
-          "homepageUrl": null,
-          "stargazerCount": 0,
-          "forkCount": 0,
-          "pushedAt": "2025-12-08T17:06:06Z",
-          "primaryLanguage": null,
-          "languages": {
-            "edges": []
-          }
-        },
-        {
           "id": "R_kgDOQk0GqQ",
           "name": "aws-toggler",
           "description": null,
@@ -3003,80 +2606,6 @@
           "stargazerCount": 0,
           "forkCount": 0,
           "pushedAt": "2025-12-04T14:56:54Z",
-          "primaryLanguage": null,
-          "languages": {
-            "edges": []
-          }
-        },
-        {
-          "id": "R_kgDOPOT9Tg",
-          "name": "perfecto",
-          "description": null,
-          "url": "https://github.com/riteshraj-shetage/perfecto",
-          "homepageUrl": null,
-          "stargazerCount": 0,
-          "forkCount": 0,
-          "pushedAt": "2025-11-28T11:46:43Z",
-          "primaryLanguage": null,
-          "languages": {
-            "edges": []
-          }
-        },
-        {
-          "id": "R_kgDOQP3IVA",
-          "name": "open2test",
-          "description": null,
-          "url": "https://github.com/riteshraj-shetage/open2test",
-          "homepageUrl": "https://open2test.lovable.app",
-          "stargazerCount": 0,
-          "forkCount": 0,
-          "pushedAt": "2025-11-13T11:37:21Z",
-          "primaryLanguage": {
-            "name": "TypeScript",
-            "color": "#3178c6"
-          },
-          "languages": {
-            "edges": [
-              {
-                "size": 449378,
-                "node": {
-                  "name": "TypeScript",
-                  "color": "#3178c6"
-                }
-              },
-              {
-                "size": 9997,
-                "node": {
-                  "name": "CSS",
-                  "color": "#663399"
-                }
-              },
-              {
-                "size": 1937,
-                "node": {
-                  "name": "HTML",
-                  "color": "#e34c26"
-                }
-              },
-              {
-                "size": 846,
-                "node": {
-                  "name": "JavaScript",
-                  "color": "#f1e05a"
-                }
-              }
-            ]
-          }
-        },
-        {
-          "id": "R_kgDOQSpApQ",
-          "name": "sonicave_my_version",
-          "description": null,
-          "url": "https://github.com/riteshraj-shetage/sonicave_my_version",
-          "homepageUrl": null,
-          "stargazerCount": 0,
-          "forkCount": 0,
-          "pushedAt": "2025-11-10T07:01:53Z",
           "primaryLanguage": null,
           "languages": {
             "edges": []
@@ -3123,52 +2652,6 @@
                 "node": {
                   "name": "HTML",
                   "color": "#e34c26"
-                }
-              }
-            ]
-          }
-        },
-        {
-          "id": "R_kgDOPuCXLA",
-          "name": "capgemini-analyst",
-          "description": null,
-          "url": "https://github.com/riteshraj-shetage/capgemini-analyst",
-          "homepageUrl": null,
-          "stargazerCount": 0,
-          "forkCount": 0,
-          "pushedAt": "2025-09-11T15:53:34Z",
-          "primaryLanguage": {
-            "name": "TypeScript",
-            "color": "#3178c6"
-          },
-          "languages": {
-            "edges": [
-              {
-                "size": 198453,
-                "node": {
-                  "name": "TypeScript",
-                  "color": "#3178c6"
-                }
-              },
-              {
-                "size": 3685,
-                "node": {
-                  "name": "CSS",
-                  "color": "#663399"
-                }
-              },
-              {
-                "size": 904,
-                "node": {
-                  "name": "HTML",
-                  "color": "#e34c26"
-                }
-              },
-              {
-                "size": 869,
-                "node": {
-                  "name": "JavaScript",
-                  "color": "#f1e05a"
                 }
               }
             ]
