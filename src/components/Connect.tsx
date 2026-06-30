@@ -68,7 +68,7 @@ export default function ConnectSec({ username, website, socialLinks }: ConnectPr
       ))}
       
       {links.length % 2 === 1 && (
-        <div className="bg-background hidden md:block border border-border -mr-px -mb-px" aria-hidden />
+        <div className="bg-background hidden md:block -mr-px -mb-px" aria-hidden />
       )}
     </div>
   );

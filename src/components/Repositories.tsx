@@ -78,7 +78,7 @@ export default function Repositories({ repositories }: RepositoriesProps) {
         );
       })}
       {topRepos.length % 2 === 1 && (
-        <div className="bg-background hidden md:block border border-border -mr-px -mb-px" aria-hidden />
+        <div className="bg-background hidden md:block -mr-px -mb-px" aria-hidden />
       )}
     </div>
   );
