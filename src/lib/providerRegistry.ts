@@ -74,14 +74,14 @@ export const PROVIDER_REGISTRY: Record<string, Omit<SocialLinks, 'handle' | 'url
   "gitlab.com": { provider: "GitLab", Icon: SiGitlab, color: "#FC6D26" },
   "bitbucket.org": { provider: "Bitbucket", Icon: SiBitbucket, color: "#0052CC" },
   "codeberg.org": { provider: "Codeberg", Icon: SiCodeberg, color: "#2185D0" },
-  "wakatime.com": { provider: "WakaTime", Icon: SiWakatime, color: "#38A4FF" },
+  "wakatime.com": { provider: "WakaTime", Icon: SiWakatime, color: "#000000" },
 
   "dev.to": { provider: "DEV.to", Icon: SiDevdotto, color: "#0A0A0A" },
   "hashnode.dev": { provider: "Hashnode", Icon: SiHashnode, color: "#2962FF" },
   "hashnode.com": { provider: "Hashnode", Icon: SiHashnode, color: "#2962FF" },
   "medium.com": { provider: "Medium", Icon: SiMedium, color: "#000000" },
   "substack.com": { provider: "Substack", Icon: SiSubstack, color: "#FF6719" },
-  "daily.dev": { provider: "daily.dev", Icon: SiDailydotdev, color: "#FFFFFF" },
+  "daily.dev": { provider: "daily.dev", Icon: SiDailydotdev, color: "#CE3DF3" },
 
   "twitter.com": { provider: "X", Icon: SiX, color: "#000000" },
   "x.com": { provider: "X", Icon: SiX, color: "#000000" },
@@ -111,7 +111,7 @@ export const PROVIDER_REGISTRY: Record<string, Omit<SocialLinks, 'handle' | 'url
   "huggingface.co": { provider: "Hugging Face", Icon: SiHuggingface, color: "#FFD21E" },
   "hackerearth.com": { provider: "HackerEarth", Icon: SiHackerearth, color: "#2C3454" },
   "codewars.com": { provider: "Codewars", Icon: SiCodewars, color: "#B1361E" },
-  "hackthebox.eu": { provider: "Hack The Box", Icon: SiHackthebox, color: "#9FEF00" },
+  "hackthebox.com": { provider: "Hack The Box", Icon: SiHackthebox, color: "#9FEF00" },
   "tryhackme.com": { provider: "TryHackMe", Icon: SiTryhackme, color: "#212C42" },
 
   "hub.docker.com": { provider: "Docker Hub", Icon: SiDocker, color: "#2496ED" },
@@ -135,6 +135,7 @@ export const PROVIDER_REGISTRY: Record<string, Omit<SocialLinks, 'handle' | 'url
 
   "instagram.com": { provider: "Instagram", Icon: SiInstagram, color: "#E4405F" },
   "threads.com": { provider: "Threads", Icon: SiThreads, color: "#000000" },
+  "threads.net": { provider: "Threads", Icon: SiThreads, color: "#000000" },
   "youtube.com": { provider: "YouTube", Icon: SiYoutube, color: "#FF0000" },
   "youtu.be": { provider: "YouTube", Icon: SiYoutube, color: "#FF0000" },
   "twitch.tv": { provider: "Twitch", Icon: SiTwitch, color: "#9146FF" },
