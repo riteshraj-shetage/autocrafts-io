@@ -6,12 +6,27 @@ type LayoutProps = PropsWithChildren<{
   username: string;
   starsCount?: string | number;
   forkCount?: string | number;
+  onSearch?: (username: string) => void;
+  onReset?: () => void;
 }>;
 
-export default function Layout({ children, username, starsCount, forkCount }: LayoutProps) {
+export default function Layout({ 
+  children, 
+  username, 
+  starsCount, 
+  forkCount, 
+  onSearch, 
+  onReset,  
+}: LayoutProps) {
   return (
     <div className="min-h-dvh bg-background flex flex-col">
-      <Navbar username={username} starsCount={starsCount} forkCount={forkCount} />
+      <Navbar 
+        username={username} 
+        starsCount={starsCount} 
+        forkCount={forkCount} 
+        onSearch={onSearch}
+        onReset={onReset}
+      />
       
       <main className="mx-auto w-full max-w-4xl flex-1 flex flex-col px-4 sm:px-6 py-6 md:py-8">
         {children}
