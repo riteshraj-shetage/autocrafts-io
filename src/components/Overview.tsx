@@ -1,6 +1,7 @@
-import { Building2, CalendarDays, MapPin, Users } from "lucide-react";
-import Calendar from "./Calendar";
+import { Building2, MapPin, Users } from "lucide-react";
+import ContributionUptime from "./Uptime";
 import type { DeveloperProfile, ContributionDay } from "../types/github";
+import { initials } from "../lib/utils/getInitials";
 
 type OverviewProps = {
   profile: DeveloperProfile;
@@ -9,99 +10,119 @@ type OverviewProps = {
 
 export default function Overview({ profile, contributions }: OverviewProps) {
   const displayName = profile.name || profile.login;
-  const fallbackInitials = profile.login.substring(0, 2).toUpperCase();
+  const fallbackInitials = initials(profile.name || profile.login);
 
   return (
-    <section className="relative pt-4 sm:pt-8">
-      <div className="border border-border p-4 md:p-6 md:px-4 grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-4 items-stretch bg-background">
+    <div className="border border-border p-4 md:py-6 md:px-4 grid grid-cols-1 md:grid-cols-12 gap-4 items-stretch bg-background min-w-0">
         
-        <div className="md:col-span-3 flex flex-row md:flex-col items-center md:items-stretch gap-2 md:gap-3">
-          
-          <div className="relative shrink-0 self-center">
-            <div className="h-28 w-28 md:h-46 md:w-46 border border-border flex items-center justify-center font-mono text-xl md:text-2xl font-bold text-muted-foreground shrink-0 overflow-hidden bg-background">
-              {profile.avatarUrl ? (
-                <img src={profile.avatarUrl} alt={displayName} className="h-full w-full object-cover grayscale" />
-              ) : (
-                <span>{fallbackInitials}</span>
-              )}
-            </div>
+      <div className="md:col-span-3 flex flex-row md:flex-col items-start md:items-stretch gap-3 min-w-0">
+        
+        <div className="relative shrink-0 self-start md:self-auto">
+          <div className="h-24 w-24 sm:h-28 sm:w-28 md:h-46 md:w-46 border border-border flex items-center justify-center font-mono text-xl md:text-2xl font-bold text-muted-foreground shrink-0 overflow-hidden bg-background">
+            {profile.avatarUrl ? (
+              <img src={profile.avatarUrl} alt={displayName} className="h-full w-full object-cover" />
+            ) : (
+              <span>{fallbackInitials}</span>
+            )}
           </div>
+        </div>
 
-          <dl className="flex-1 md:w-full font-mono text-[10px] sm:text-[11px] border border-border divide-y divide-border p-2 sm:p-3">
-            <div className="flex items-center justify-between py-1.5">
-              <dt className="flex items-center gap-1.5 text-muted-foreground uppercase tracking-wider">
-                <CalendarDays className="w-3 h-3 hidden sm:block" />
-                Joined
+        <dl className="flex-1 md:w-full text-[12px] sm:text-[13px] divide-y divide-border min-w-0 overflow-hidden">
+          
+          {profile.socialLinks.map(({ handle, url, Icon }) => (
+            <div key={url} className="flex font-mono items-center gap-1.5 sm:gap-2 py-1 sm:py-1.5 min-w-0">
+              <dt className="flex items-center text-muted-foreground shrink-0">
+                <Icon className="w-2.5 h-2.5 sm:w-3 sm:h-3 shrink-0" />
               </dt>
-              <dd className="text-foreground font-bold">{profile.createdAt}</dd>
+              <dd className="text-foreground truncate min-w-0">
+                <a 
+                  href={url} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="hover:underline focus:outline-none focus:ring-1 focus:ring-border truncate block"
+                  title={url}
+                >
+                  {handle}
+                </a>
+              </dd>
             </div>
+          ))}
 
-            <div className="flex items-center justify-between py-1.5">
-              <dt className="flex items-center gap-1.5 text-muted-foreground uppercase tracking-wider">
-                <Users className="w-3 h-3 hidden sm:block" />
-                Followers
-              </dt>
-              <dd className="text-foreground font-bold">{profile.followersCount}</dd>
-            </div>
+          <div className="flex flex-row flex-wrap items-center py-1.5 sm:py-2 text-[12px] sm:text-[13px]">
             
-            <div className="flex items-center justify-between py-1.5">
-              <dt className="flex items-center gap-1.5 text-muted-foreground uppercase tracking-wider">
-                <Users className="w-3 h-3 opacity-0 hidden sm:block" /> 
-                Following
-              </dt>
-              <dd className="text-foreground font-bold">{profile.followingCount}</dd>
-            </div>
-          </dl>
-        </div>
+            <a 
+              href={`https://github.com/${profile.login}?tab=followers`}
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center gap-1 shrink-0"
+            >
+              <Users className="w-3 h-3 text-muted-foreground shrink-0 mr-1" />
+              <span className="text-foreground font-semibold tabular-nums">
+                {profile.followersCount}
+              </span>
+              <span className="text-muted-foreground hover:underline hover:text-foreground/80 whitespace-nowrap">
+                followers
+              </span>
+            </a>
+            
+            <a 
+              href={`https://github.com/${profile.login}?tab=following`}
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center gap-1 shrink-0"
+            >
+              <span className="w-3 h-3 shrink-0 mr-1" aria-hidden="true" />
+              <span className="text-foreground font-semibold tabular-nums">
+                {profile.followingCount}
+              </span>
+              <span className="text-muted-foreground hover:underline hover:text-foreground/80 whitespace-nowrap">
+                following
+              </span>
+            </a>
+            
+          </div>
+        </dl>
+      </div>
 
-        <div className="md:col-span-9 flex flex-col h-full min-w-0">
-          <div className="flex items-start justify-between gap-2">
-            <div className="flex-1 min-w-0">
-              <h1 className="py-1 text-2xl sm:text-3xl font-bold text-foreground leading-[0.95] tracking-tight md:text-4xl truncate">
-                {displayName}
-              </h1>
+      <div className="md:col-span-9 flex flex-col h-full min-w-0 overflow-hidden">
+        <div className="flex items-start justify-between gap-2 min-w-0">
+          <div className="flex-1 min-w-0">
+            <h1 className="py-1 text-2xl sm:text-3xl font-bold text-foreground leading-[0.95] tracking-tight md:text-4xl truncate">
+              {displayName}
+            </h1>
+            
+            <div className="mt-3 flex flex-wrap items-center gap-y-1 gap-x-4 font-mono text-[11px] sm:text-xs text-muted-foreground">
+              {profile.company && (
+                <span className="text-terminal-fg flex items-center min-w-0">
+                  <Building2 size={15} className="text-muted-foreground mr-1.5 shrink-0"/>
+                  <span className="truncate">{profile.company}</span>
+                </span>
+              )}
               
-              <div className="mt-3 flex flex-wrap items-center gap-y-1 gap-x-2 font-mono text-[11px] sm:text-xs text-muted-foreground">
-                <span className="text-terminal-fg font-bold">@{profile.login}</span>
-                
-                {profile.company && (
-                  <>
-                    <span className="text-border font-bold hidden sm:inline">/</span>
-                    <span className="text-terminal-fg flex items-center">
-                      <Building2 size={14} className="text-muted-foreground mr-1"/>
-                      {profile.company}
-                    </span>
-                  </>
-                )}
-                
-                {profile.location && (
-                  <>
-                    <span className="text-border font-bold hidden sm:inline">/</span>
-                    <span className="text-terminal-fg flex items-center">
-                      <MapPin size={14} className="text-muted-foreground mr-1"/>
-                      {profile.location}
-                    </span>
-                  </>
-                )}
-              </div>
-
-              {profile.bio && (
-                <div className="mt-4 border border-border p-2 sm:p-3">
-                  <p className="font-mono text-[12px] sm:text-xs text-muted-foreground leading-relaxed w-full max-w-3xl line-clamp-3">
-                    <span className="text-terminal-green font-bold mr-2">&gt;</span>
-                    {profile.bio}
-                  </p>
-                </div>
+              {profile.location && (
+                <span className="text-terminal-fg flex items-center min-w-0">
+                  <MapPin size={15} className="text-muted-foreground mr-1.5 shrink-0"/>
+                  <span className="truncate">{profile.location}</span>
+                </span>
               )}
             </div>
-          </div>
-          
-          <div className="mt-auto w-full">
-            <Calendar contributions={contributions} />
+
+            {profile.bio && (
+              <div className="mt-4 border border-border p-2 sm:p-3">
+                <p className="font-mono text-[12px] sm:text-xs text-muted-foreground leading-relaxed w-full max-w-3xl line-clamp-3">
+                  <span className="text-terminal-green font-bold mr-2">&gt;</span>
+                  {profile.bio}
+                </p>
+              </div>
+            )}
           </div>
         </div>
-
+        
+        <div className="mt-auto min-w-0">
+          <ContributionUptime contributions={contributions} />
+        </div>
       </div>
-    </section>
+
+    </div>
   );
 }

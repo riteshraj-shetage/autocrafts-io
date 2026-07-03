@@ -1,5 +1,7 @@
 // src/types/github.ts
 
+import type { ComponentType, CSSProperties } from "react";
+
 export type ContributionLevel = 0 | 1 | 2 | 3 | 4;
 
 export interface ContributionDay {
@@ -17,15 +19,17 @@ export interface DeveloperProfile {
   bio?: string;
   website?: string;
   createdAt: string;
-  followersCount: number;
-  followingCount: number;
+  followersCount: number | string;
+  followingCount: number | string;
+  socialLinks?: SocialLinks[];
 }
 
 export interface DeveloperStats {
-  totalRepos: number;
-  contributions: number;
-  totalStars: number;
-  since: number;
+  totalRepos: number | string;
+  contributions: number | string;
+  totalStars: number | string;
+  currentStreak: number;
+  longestStreak: number;
 }
 
 export interface LanguageStat {
@@ -49,9 +53,12 @@ export interface RepositoryData {
   } | null;
 }
 
-export interface SocialLink {
-  provider: string; 
+export interface SocialLinks {
+  provider: string;
+  handle: string;
   url: string;
+  Icon: ComponentType<{ className?: string; style?: CSSProperties }>;
+  color: string | undefined; 
 }
 
 export interface AutoData {

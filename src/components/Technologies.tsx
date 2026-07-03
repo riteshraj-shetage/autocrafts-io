@@ -5,10 +5,7 @@ type TechnologiesProps = {
 };
 
 export default function TechnologiesSec({ languageData }: TechnologiesProps) {
-  if (languageData.length === 0) return null;
-
-  const totalPercent = languageData.reduce((sum, { percent }) => sum + percent, 0);
-  const remainder = Math.max(0, 100 - totalPercent);
+  if (!languageData || languageData.length === 0) return null;
 
   return (
     <div className="border border-border bg-background">
@@ -17,20 +14,19 @@ export default function TechnologiesSec({ languageData }: TechnologiesProps) {
         <div className="mb-3 font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
           Most Used Languages
         </div>
-        <div className="flex h-2.5 w-full border border-border overflow-hidden gap-px bg-border">
+        
+        {/* Removed gap-px and used a clean flex row without remainder overflow */}
+        <div className="flex h-2.5 w-full border border-border overflow-hidden bg-muted">
           {languageData.map(({ lang, percent, color }) => (
             <div
               key={lang}
-              style={{ width: `${percent}%`, backgroundColor: color }}
+              style={{ flex: `${percent} 0 0%`, backgroundColor: color }}
               role="img"
               aria-label={`${lang} ${Math.round(percent)}%`}
               title={`${lang} ${Math.round(percent)}%`}
-              className="shrink-0 transition-opacity hover:opacity-80 cursor-default"
+              className="transition-opacity hover:opacity-80 cursor-default"
             />
           ))}
-          {remainder > 0 && (
-            <div style={{ width: `${remainder}%` }} className="bg-background shrink-0" aria-hidden="true" />
-          )}
         </div>
       </div>
 

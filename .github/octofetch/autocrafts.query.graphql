@@ -1,6 +1,5 @@
-query GetDeveloperProfile($owner: String!) {
+query GetDeveloperProfile($owner: String!, $from: DateTime!, $to: DateTime!) {
   user(login: $owner) {
-    # 1. DeveloperProfile
     login
     name
     avatarUrl
@@ -16,7 +15,6 @@ query GetDeveloperProfile($owner: String!) {
       totalCount
     }
 
-    # 2. SocialLinks
     socialAccounts(first: 10) {
       nodes {
         provider
@@ -24,8 +22,13 @@ query GetDeveloperProfile($owner: String!) {
       }
     }
 
-    # 3. Contributions
-    contributionsCollection {
+    yearlyStats: contributionsCollection {
+      contributionCalendar {
+        totalContributions
+      }
+    }
+
+    recentActivity: contributionsCollection(from: $from, to: $to) {
       contributionCalendar {
         totalContributions
         weeks {
@@ -38,7 +41,6 @@ query GetDeveloperProfile($owner: String!) {
       }
     }
 
-    # 4. Repositories
     repositories(
       first: 100
       ownerAffiliations: OWNER
@@ -60,7 +62,6 @@ query GetDeveloperProfile($owner: String!) {
           name
           color
         }
-        # Languages
         languages(first: 10, orderBy: { field: SIZE, direction: DESC }) {
           edges {
             size

@@ -1,4 +1,4 @@
-name: Deploy React Bun App to Global GitHub Pages Subfolder
+name: Deploy React Bun App to Global GitHub Pages Subfolder(on-purpose)
 
 on:
   push:
@@ -24,13 +24,24 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
+      # 0. Calculate 90day date range
+      - name: Calculate Date Range
+        id: dates
+        run: |
+          echo "FROM_DATE=$(date -u -d '90 days ago' +"%Y-%m-%dT%H:%M:%SZ")" >> $GITHUB_ENV
+          echo "TO_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ")" >> $GITHUB_ENV
+
       # 1. Fetch GitHub data 
       - name: Fetch GitHub Payload
         uses: riteshraj-shetage/octofetch@v1.0.0
         with:
           github_token: ${{ secrets.GH_PAT }}
           query_file: .github/octofetch/autocrafts.query.graphql
-          variables: '{"owner": "${{ github.repository_owner }}"}'
+          variables: '{
+                        "owner": "${{ github.repository_owner }}", 
+                        "from": "${{ steps.dates.outputs.FROM_DATE }}", 
+                        "to": "${{ steps.dates.outputs.TO_DATE }}" 
+                      }'
           output_file: src/data/sourced.json
 
       # 2. Commit and Push payload back to this repository 

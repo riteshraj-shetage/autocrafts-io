@@ -7,6 +7,7 @@ import {
   SiWakatime,
   SiFreecodecamp,
   SiInstagram,
+  SiThreads,
   SiTiktok,
   SiPinterest,
   SiTwitch,
@@ -65,9 +66,9 @@ import {
   SiGmail,
 } from "react-icons/si";
 import { BsLinkedin } from "react-icons/bs";
-import type { SocialIdentity } from "./socialProvider";
+import type { SocialLinks } from "../types/github";
 
-export const PROVIDER_REGISTRY: Record<string, Omit<SocialIdentity, 'handle' | 'url'>> = {
+export const PROVIDER_REGISTRY: Record<string, Omit<SocialLinks, 'handle' | 'url'>> = {
   "github.com": { provider: "GitHub", Icon: SiGithub, color: "#181717" },
   "github.io": { provider: "GitHub Pages", Icon: SiGithubpages, color: "#222222" },
   "gitlab.com": { provider: "GitLab", Icon: SiGitlab, color: "#FC6D26" },
@@ -75,7 +76,7 @@ export const PROVIDER_REGISTRY: Record<string, Omit<SocialIdentity, 'handle' | '
   "codeberg.org": { provider: "Codeberg", Icon: SiCodeberg, color: "#2185D0" },
   "wakatime.com": { provider: "WakaTime", Icon: SiWakatime, color: "#38A4FF" },
 
-  "dev.to": { provider: "DEV", Icon: SiDevdotto, color: "#0A0A0A" },
+  "dev.to": { provider: "DEV.to", Icon: SiDevdotto, color: "#0A0A0A" },
   "hashnode.dev": { provider: "Hashnode", Icon: SiHashnode, color: "#2962FF" },
   "hashnode.com": { provider: "Hashnode", Icon: SiHashnode, color: "#2962FF" },
   "medium.com": { provider: "Medium", Icon: SiMedium, color: "#000000" },
@@ -133,6 +134,7 @@ export const PROVIDER_REGISTRY: Record<string, Omit<SocialIdentity, 'handle' | '
   "opencollective.com": { provider: "Open Collective", Icon: SiOpencollective, color: "#7FADF2" },
 
   "instagram.com": { provider: "Instagram", Icon: SiInstagram, color: "#E4405F" },
+  "threads.com": { provider: "Threads", Icon: SiThreads, color: "#000000" },
   "youtube.com": { provider: "YouTube", Icon: SiYoutube, color: "#FF0000" },
   "youtu.be": { provider: "YouTube", Icon: SiYoutube, color: "#FF0000" },
   "twitch.tv": { provider: "Twitch", Icon: SiTwitch, color: "#9146FF" },

@@ -1,5 +1,6 @@
 import { ArrowUpRight, Star, GitFork } from "lucide-react";
 import type { RepositoryData } from "../types/github";
+import { fmtNum } from "../lib/utils/fmtNum";
 
 type RepositoriesProps = {
   repositories: RepositoryData[];
@@ -42,7 +43,7 @@ export default function Repositories({ repositories }: RepositoriesProps) {
             <div className="flex items-start justify-between gap-3">
               <h3 
                 className="font-mono text-sm font-bold text-foreground line-clamp-2" 
-                title={repo.name}
+                title={repo.website || repo.url || repo.name}
               >
                 {repo.name}
               </h3>
@@ -67,11 +68,11 @@ export default function Repositories({ repositories }: RepositoriesProps) {
               }
 
               {repo.stargazerCount > 0 && (
-                <span className="flex items-center"><Star className="w-3 h-3 mb-0.5 mr-1 shrink-0"/>{repo.stargazerCount}</span>
+                <span className="flex items-center"><Star className="w-3 h-3 mb-0.5 mr-1 shrink-0"/>{fmtNum(repo.stargazerCount)}</span>
               )}
 
               {repo.forksCount > 0 && (
-                <span className="flex items-center"><GitFork className="w-3 h-3 mb-0.5 mr-1 shrink-0"/>{repo.forksCount}</span>
+                <span className="flex items-center"><GitFork className="w-3 h-3 mb-0.5 mr-1 shrink-0"/>{fmtNum(repo.forksCount)}</span>
               )}
             </div>
           </a>

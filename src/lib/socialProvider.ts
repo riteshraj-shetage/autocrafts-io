@@ -1,14 +1,6 @@
-import type { ComponentType, CSSProperties } from "react";
 import { Link2 } from "lucide-react";
 import { PROVIDER_REGISTRY } from "./providerRegistry";
-
-export interface SocialIdentity {
-  provider: string;
-  handle: string;
-  url: string;
-  Icon: ComponentType<{ className?: string; style?: CSSProperties }>;
-  color: string | undefined; 
-}
+import type { SocialLinks } from "../types/github";
 
 const GENERIC_IDENTITY = {
   provider: "Link",
@@ -16,14 +8,13 @@ const GENERIC_IDENTITY = {
   color: undefined, 
 };
 
-export function extractSocialIdentity(rawUrl: string): SocialIdentity {
+export function extractSocialLinks(rawUrl: string): SocialLinks {
   if (!rawUrl) return { handle: "", url: "", ...GENERIC_IDENTITY };
 
   const normalizedUrl = rawUrl.startsWith("http") ? rawUrl : `https://${rawUrl}`;
   
   try {
     const urlObj = new URL(normalizedUrl);
-    
     const cleanHostname = urlObj.hostname.replace(/^www\./i, "").toLowerCase();
     
     let identity = PROVIDER_REGISTRY[cleanHostname];
@@ -36,9 +27,16 @@ export function extractSocialIdentity(rawUrl: string): SocialIdentity {
       }
     }
 
-    const handle = normalizedUrl
-      .replace(/^https?:\/\/(www\.)?/, "")
-      .replace(/\/$/, "");
+    let handle = normalizedUrl.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "");
+
+    if (identity && identity.provider !== "Website" && identity.provider !== "Link") {
+      const pathSegments = urlObj.pathname.split('/').filter(Boolean);
+      if (pathSegments.length > 0) {
+        handle = pathSegments[pathSegments.length - 1];
+      }
+    } else if (!urlObj.pathname || urlObj.pathname === "/") {
+      handle = cleanHostname;
+    }
 
     return {
       provider: identity?.provider || GENERIC_IDENTITY.provider,
@@ -49,7 +47,6 @@ export function extractSocialIdentity(rawUrl: string): SocialIdentity {
     };
 
   } catch (error) {
-
     return {
       provider: GENERIC_IDENTITY.provider,
       Icon: GENERIC_IDENTITY.Icon,

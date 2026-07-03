@@ -1,5 +1,5 @@
-import { type ReactNode, type ComponentType } from "react";
-import { ChartLine, Code2, FolderOpen, Link2 } from "lucide-react";
+import { type ReactNode, type ComponentType, Activity } from "react";
+import { ChartLine, Code2, FolderOpen, Link2, User } from "lucide-react";
 
 import Layout from "../components/layout/Layout";
 import Overview from "../components/Overview";
@@ -19,6 +19,7 @@ import {
   forgeSocialLinks,
   getCounts
 } from "../lib/forge";
+import ActivityPulse from "../components/Uptime";
 
 function ProfileSection({ icon: Icon, title, children }: { icon: ComponentType<{ className?: string }>; title: string; children: ReactNode }) {
   return (
@@ -46,19 +47,20 @@ export default function Profile() {
 
   return (
     <Layout username={profile.login} starsCount={totalStars} forkCount={totalForks}>
-      <div className="pt-2 sm:pt-8 pb-10 sm:pb-16">
-        
-        <Overview 
+      <div className="pb-10 sm:pb-16">
+        <ProfileSection icon={User} title="Overview">
+          <Overview 
           profile={profile} 
           contributions={contributions}
         />
+        </ProfileSection>
 
         <ProfileSection icon={ChartLine} title="Stats">
           <Statistics
             totalRepos={stats.totalRepos}
             contributions={stats.contributions}
             totalStars={stats.totalStars}
-            since={stats.since}
+            currentStreak={stats.currentStreak}
           />
         </ProfileSection>
 
@@ -71,11 +73,7 @@ export default function Profile() {
         </ProfileSection>
         
         <ProfileSection icon={Link2} title="Connect">
-          <Connect
-            username={profile.login}
-            website={profile.website}
-            socialLinks={socialLinks}
-          />
+          <Connect socialLinks={socialLinks} />
         </ProfileSection>
 
       </div>

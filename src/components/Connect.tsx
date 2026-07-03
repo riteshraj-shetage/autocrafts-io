@@ -1,45 +1,16 @@
-import { ArrowUpRight, Globe } from "lucide-react";
-import { extractSocialIdentity, type SocialIdentity } from "../lib/socialProvider";
-import type { SocialLink } from "../types/github";
-import { SiGithub } from "react-icons/si";
-import { isColorDark } from "../lib/isColorDark";
+import { ArrowUpRight } from "lucide-react";
+import type { SocialLinks } from "../types/github";
+import { isColorDark } from "../lib/utils/isColorDark";
 
 type ConnectProps = {
-  username: string;
-  website?: string | null;
-  socialLinks: SocialLink[];
+  socialLinks: SocialLinks[];
 };
 
-export default function ConnectSec({ username, website, socialLinks }: ConnectProps) {
-  
-  const links: SocialIdentity[] = [];
-
-  links.push({
-    provider: "GitHub",
-    Icon: SiGithub,
-    color: undefined,
-    handle: `@${username}`,
-    url: `https://github.com/${username}`,
-  });
-  
-  if (website) {
-    links.push({
-      provider: "Website",
-      Icon: Globe,
-      color: undefined,
-      handle: website.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, ""),
-      url: website,
-    });
-  }
-
-  const rawUrls: string[] = [];
-  socialLinks.forEach(link => rawUrls.push(link.url));
-
-  links.push(...rawUrls.map(extractSocialIdentity));
+export default function ConnectSec({ socialLinks }: ConnectProps) {
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-px">
-      {links.map(({ provider, handle, url, Icon, color }) => (
+      {socialLinks.map(({ provider, handle, url, Icon, color }) => (
         <a
           key={url}
           href={url}
@@ -67,7 +38,7 @@ export default function ConnectSec({ username, website, socialLinks }: ConnectPr
         </a>
       ))}
       
-      {links.length % 2 === 1 && (
+      {socialLinks.length % 2 === 1 && (
         <div className="bg-background hidden md:block -mr-px -mb-px" aria-hidden />
       )}
     </div>
