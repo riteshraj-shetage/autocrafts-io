@@ -1,4 +1,4 @@
-name: Deploy React Bun App to Global GitHub Pages Subfolder(on-purpose)
+name: Deploy Autocrafts to Custom Domain (riteshraj.tech)
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
     paths-ignore:
       - "src/data/**" 
   # schedule:
-  #   - cron: '0 0 * * *' # Automatic daily deployment at midnight UTC
+  #   - cron: '0 0 * * *' 
   workflow_dispatch:
 
 permissions:
@@ -15,7 +15,6 @@ permissions:
 concurrency:
   group: "pages"
   cancel-in-progress: false
-
 
 jobs:
   build-and-deploy:
@@ -44,7 +43,7 @@ jobs:
                       }'
           output_file: src/data/sourced.json
 
-      # 2. Commit and Push payload back to this repository 
+      # 2. Commit and Push payload back to this repo
       - name: Commit Payload back to Repository
         run: |
           git config --global user.name "github-actions[bot]"
@@ -68,16 +67,14 @@ jobs:
 
       # 5. Compile the React UI 
       - name: Build Application
-        run: bun run build:gh
+        run: bun run build
         working-directory: .
 
-      # 6. Deploy to the external repository 
-      - name: Deploy to github.io repo subfolder
+      # 6. Deploy natively to gh-pages branch
+      - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           personal_token: ${{ secrets.GH_PAT }}
           publish_dir: ./dist
-          external_repository: ${{ github.repository_owner }}/${{ github.repository_owner }}.github.io
-          publish_branch: main
-          destination_dir: autocrafts
-          keep_files: true
+          publish_branch: gh-pages
+          cname: riteshraj.tech

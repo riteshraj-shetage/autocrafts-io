@@ -12,6 +12,7 @@ dist
 dist-ssr
 *.local
 
+proxy-worker
 
 # Editor directories and files
 .vscode/*

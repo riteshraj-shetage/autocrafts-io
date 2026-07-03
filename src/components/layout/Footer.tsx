@@ -6,7 +6,7 @@ export default function Footer() {
         <div className="flex items-center gap-2.5">
           <img src="/favicon.svg" alt="autocrafts" className="h-4 w-4" />
           <p className="font-mono text-[12px] uppercase tracking-widest text-foreground/80">
-            autocrafts.io
+            autocrafts.io | riteshraj-shetage
           </p>
         </div>
 
