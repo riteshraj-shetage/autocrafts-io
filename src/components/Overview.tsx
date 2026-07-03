@@ -29,7 +29,7 @@ export default function Overview({ profile, contributions }: OverviewProps) {
 
         <dl className="flex-1 md:w-full text-[12px] sm:text-[13px] divide-y divide-border min-w-0 overflow-hidden">
           
-          {profile.socialLinks.map(({ handle, url, Icon }) => (
+          {profile.socialLinks?.map(({ handle, url, Icon }) => (
             <div key={url} className="flex font-mono items-center gap-1.5 sm:gap-2 py-1 sm:py-1.5 min-w-0">
               <dt className="flex items-center text-muted-foreground shrink-0">
                 <Icon className="w-2.5 h-2.5 sm:w-3 sm:h-3 shrink-0" />
@@ -47,7 +47,7 @@ export default function Overview({ profile, contributions }: OverviewProps) {
               </dd>
             </div>
           ))}
-
+          
           <div className="flex flex-row flex-wrap items-center py-1.5 sm:py-2 text-[12px] sm:text-[13px]">
             
             <a 

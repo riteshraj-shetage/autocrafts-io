@@ -1,4 +1,4 @@
-import { type ReactNode, type ComponentType, Activity } from "react";
+import { type ReactNode, type ComponentType } from "react";
 import { ChartLine, Code2, FolderOpen, Link2, User } from "lucide-react";
 
 import Layout from "../components/layout/Layout";
@@ -19,7 +19,6 @@ import {
   forgeSocialLinks,
   getCounts
 } from "../lib/forge";
-import ActivityPulse from "../components/Uptime";
 
 function ProfileSection({ icon: Icon, title, children }: { icon: ComponentType<{ className?: string }>; title: string; children: ReactNode }) {
   return (
