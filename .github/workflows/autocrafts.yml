@@ -28,8 +28,8 @@ jobs:
       - name: Calculate Date Range
         id: dates
         run: |
-          echo "FROM_DATE=$(date -u -d '90 days ago' +"%Y-%m-%dT%H:%M:%SZ")" >> $GITHUB_ENV
-          echo "TO_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ")" >> $GITHUB_ENV
+          echo "FROM_DATE=$(date -u -d '90 days ago' +'%Y-%m-%dT%H:%M:%SZ')" >> $GITHUB_OUTPUT
+          echo "TO_DATE=$(date -u +'%Y-%m-%dT%H:%M:%SZ')" >> $GITHUB_OUTPUT
 
       # 1. Fetch GitHub data 
       - name: Fetch GitHub Payload
