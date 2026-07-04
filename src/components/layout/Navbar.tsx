@@ -59,7 +59,7 @@ export default function Navbar({ username, starsCount, forkCount, onSearch }: Na
                 }}
                 placeholder="github-username"
                 spellCheck={false}
-                className="bg-transparent border-b border-muted py-0.5 text-foreground focus:outline-none focus:border-terminal-green transition-colors tracking-wider font-bold text-xs sm:text-sm placeholder:text-muted-foreground/40"
+                className="bg-transparent border-b border-muted py-0.5 text-foreground focus:outline-none focus:border-terminal-green transition-colors truncate tracking-wider font-bold text-xs sm:text-sm placeholder:text-muted-foreground/40"
               />
             </div>
           </form>
