@@ -18,12 +18,14 @@ export default function Overview({ profile, contributions }: OverviewProps) {
       <div className="md:col-span-3 flex flex-row md:flex-col items-start md:items-stretch gap-3 min-w-0">
         
         <div className="relative shrink-0 self-start md:self-auto">
-          <div className="h-24 w-24 sm:h-28 sm:w-28 md:h-46 md:w-46 border border-border flex items-center justify-center font-mono text-xl md:text-2xl font-bold text-muted-foreground shrink-0 overflow-hidden bg-background">
-            {profile.avatarUrl ? (
-              <img src={profile.avatarUrl} alt={displayName} className="h-full w-full object-cover" />
-            ) : (
-              <span>{fallbackInitials}</span>
-            )}
+          <div className="relative shrink-0 self-start md:self-auto">
+            <div className="h-24 w-24 sm:h-28 sm:w-28 md:h-36 md:w-36 lg:h-46 lg:w-46 border border-border flex items-center justify-center font-mono text-xl md:text-2xl font-bold text-muted-foreground shrink-0 overflow-hidden bg-background">
+              {profile.avatarUrl ? (
+                <img src={profile.avatarUrl} alt={displayName} className="h-full w-full object-cover" />
+              ) : (
+                <span>{fallbackInitials}</span>
+              )}
+            </div>
           </div>
         </div>
 
