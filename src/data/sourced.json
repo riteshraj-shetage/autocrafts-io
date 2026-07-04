@@ -2,7 +2,7 @@
   "user": {
     "login": "riteshraj-shetage",
     "name": "Riteshraj Shetage",
-    "avatarUrl": "https://avatars.githubusercontent.com/u/144100040?u=24a37645b5063ad587ed2f76b338cb32c5eb05f6&v=4",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/144100040?u=6ed35cdec5137bce385896643ee4e6fc6e584007&v=4",
     "company": "OSS Developer",
     "location": "Pune, IN",
     "bio": "Python | Linux | Automation",
@@ -24,12 +24,12 @@
     },
     "yearlyStats": {
       "contributionCalendar": {
-        "totalContributions": 1708
+        "totalContributions": 1710
       }
     },
     "recentActivity": {
       "contributionCalendar": {
-        "totalContributions": 339,
+        "totalContributions": 341,
         "weeks": [
           {
             "contributionDays": [
@@ -533,7 +533,7 @@
               },
               {
                 "date": "2026-07-04",
-                "contributionCount": 3,
+                "contributionCount": 5,
                 "contributionLevel": "FIRST_QUARTILE"
               }
             ]
@@ -547,12 +547,12 @@
         {
           "id": "R_kgDORvqJ6A",
           "name": "autocrafts-io",
-          "description": "Generates Real-time GitHub portfolios...",
+          "description": "Generate real-time GitHub portfolios...",
           "url": "https://github.com/riteshraj-shetage/autocrafts-io",
           "homepageUrl": "http://riteshraj.tech",
           "stargazerCount": 1,
           "forkCount": 0,
-          "pushedAt": "2026-07-04T05:47:49Z",
+          "pushedAt": "2026-07-04T08:01:25Z",
           "primaryLanguage": {
             "name": "TypeScript",
             "color": "#3178c6"
@@ -560,7 +560,7 @@
           "languages": {
             "edges": [
               {
-                "size": 50491,
+                "size": 49954,
                 "node": {
                   "name": "TypeScript",
                   "color": "#3178c6"
@@ -618,7 +618,7 @@
         {
           "id": "R_kgDOQVIO3g",
           "name": "astro-builds-portfolio",
-          "description": "Developer portfolio template — clone, customize, and deploy your own website",
+          "description": "Developer portfolio template — clone, customize, and deploy",
           "url": "https://github.com/riteshraj-shetage/astro-builds-portfolio",
           "homepageUrl": "https://main.dmh3fx6tlcfsz.amplifyapp.com",
           "stargazerCount": 1,
@@ -1188,5 +1188,8 @@
         }
       ]
     }
+  },
+  "repository": {
+    "stargazerCount": 1
   }
 }
