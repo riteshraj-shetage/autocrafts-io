@@ -6,7 +6,6 @@ import type {
   LanguageStat, 
   RepositoryData, 
   SocialLinks, 
-  AutoData 
 } from "../types/github";
 import { fmtNum } from "./utils/fmtNum";
 import { extractSocialLinks } from "./socialProvider";
@@ -240,13 +239,8 @@ export function forgeSocialLinks(rawData: any): SocialLinks[] {
   return links;
 }
 
-export function getCounts(rawData: any): AutoData {
-  const autoRepo = rawData?.user?.repositories?.nodes?.find(
-    (repo: any) => repo.name === "autocrafts-io"
-  );
-
+export function getCounts(rawData: any) {
   return {
-    totalStars: autoRepo ? autoRepo.stargazerCount : 0,
-    totalForks: autoRepo ? autoRepo.forkCount : 0
+    totalStars: rawData?.repository?.stargazerCount ?? 0,
   };
 }

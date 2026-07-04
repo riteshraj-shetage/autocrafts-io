@@ -60,8 +60,3 @@ export interface SocialLinks {
   Icon: ComponentType<{ className?: string; style?: CSSProperties }>;
   color: string | undefined; 
 }
-
-export interface AutoData {
-  totalStars: string | number;
-  totalForks: string | number;
-}

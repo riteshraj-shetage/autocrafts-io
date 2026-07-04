@@ -68,7 +68,7 @@ export default function Profile() {
       <div className="min-h-screen flex items-center justify-center font-mono text-xs text-muted-foreground tracking-widest bg-background">
         <div className="flex items-center gap-3 border border-border px-4 py-3">
           <div className="w-2 h-2 bg-terminal-green animate-ping" />
-          <span>Generating profile - {searchedUser}...</span>
+          <span>Loading @{searchedUser}</span>
         </div>
       </div>
     );
@@ -103,13 +103,12 @@ export default function Profile() {
   const repositories = forgeRepositories(rawTelemetry);
   const languages = forgeLanguages(rawTelemetry);
   const socialLinks = forgeSocialLinks(rawTelemetry);
-  const { totalStars, totalForks } = getCounts(rawTelemetry);
+  const { totalStars } = getCounts(rawTelemetry);
 
   return (
     <Layout 
       username={profile.login} 
       starsCount={totalStars} 
-      forkCount={totalForks}
       onSearch={handleSearch}
       onReset={handleReset}
     >

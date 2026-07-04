@@ -12,7 +12,7 @@ export function useDeveloper(username: string | null) {
       return;
     }
 
-    const workerUrl = "https://autocrafts-io.riteshraj.workers.dev/";
+    const workerUrl = "https://api.riteshraj.tech/";
 
     async function fetchLiveProfile() {
       setLoading(true);

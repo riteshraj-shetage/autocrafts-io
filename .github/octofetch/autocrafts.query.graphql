@@ -74,4 +74,7 @@ query GetDeveloperProfile($owner: String!, $from: DateTime!, $to: DateTime!) {
       }
     }
   }
+  repository(owner: "riteshraj-shetage", name: "autocrafts-io") {
+    stargazerCount
+  }
 }

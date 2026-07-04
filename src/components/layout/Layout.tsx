@@ -5,7 +5,6 @@ import Navbar from "./Navbar";
 type LayoutProps = PropsWithChildren<{
   username: string;
   starsCount?: string | number;
-  forkCount?: string | number;
   onSearch?: (username: string) => void;
   onReset?: () => void;
 }>;
@@ -14,7 +13,6 @@ export default function Layout({
   children, 
   username, 
   starsCount, 
-  forkCount, 
   onSearch, 
   onReset,  
 }: LayoutProps) {
@@ -23,7 +21,6 @@ export default function Layout({
       <Navbar 
         username={username} 
         starsCount={starsCount} 
-        forkCount={forkCount} 
         onSearch={onSearch}
         onReset={onReset}
       />
