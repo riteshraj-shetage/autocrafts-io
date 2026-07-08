@@ -24,35 +24,15 @@
     },
     "yearlyStats": {
       "contributionCalendar": {
-        "totalContributions": 1712
+        "totalContributions": 1711
       }
     },
     "recentActivity": {
       "contributionCalendar": {
-        "totalContributions": 343,
+        "totalContributions": 347,
         "weeks": [
           {
             "contributionDays": [
-              {
-                "date": "2026-04-05",
-                "contributionCount": 0,
-                "contributionLevel": "NONE"
-              },
-              {
-                "date": "2026-04-06",
-                "contributionCount": 0,
-                "contributionLevel": "NONE"
-              },
-              {
-                "date": "2026-04-07",
-                "contributionCount": 0,
-                "contributionLevel": "NONE"
-              },
-              {
-                "date": "2026-04-08",
-                "contributionCount": 0,
-                "contributionLevel": "NONE"
-              },
               {
                 "date": "2026-04-09",
                 "contributionCount": 1,
@@ -533,8 +513,32 @@
               },
               {
                 "date": "2026-07-04",
-                "contributionCount": 7,
+                "contributionCount": 9,
                 "contributionLevel": "SECOND_QUARTILE"
+              }
+            ]
+          },
+          {
+            "contributionDays": [
+              {
+                "date": "2026-07-05",
+                "contributionCount": 1,
+                "contributionLevel": "FIRST_QUARTILE"
+              },
+              {
+                "date": "2026-07-06",
+                "contributionCount": 1,
+                "contributionLevel": "FIRST_QUARTILE"
+              },
+              {
+                "date": "2026-07-07",
+                "contributionCount": 0,
+                "contributionLevel": "NONE"
+              },
+              {
+                "date": "2026-07-08",
+                "contributionCount": 0,
+                "contributionLevel": "NONE"
               }
             ]
           }
@@ -545,14 +549,39 @@
       "totalCount": 22,
       "nodes": [
         {
+          "id": "R_kgDOSsV5ng",
+          "name": "brut-arch",
+          "description": "Arch Linux Install script",
+          "url": "https://github.com/riteshraj-shetage/brut-arch",
+          "homepageUrl": "",
+          "stargazerCount": 1,
+          "forkCount": 0,
+          "pushedAt": "2026-07-06T07:50:53Z",
+          "primaryLanguage": {
+            "name": "Shell",
+            "color": "#89e051"
+          },
+          "languages": {
+            "edges": [
+              {
+                "size": 17046,
+                "node": {
+                  "name": "Shell",
+                  "color": "#89e051"
+                }
+              }
+            ]
+          }
+        },
+        {
           "id": "R_kgDORvqJ6A",
           "name": "autocrafts-io",
-          "description": "Generate real-time GitHub portfolios...",
+          "description": "Generate real-time GitHub portfolios by username",
           "url": "https://github.com/riteshraj-shetage/autocrafts-io",
           "homepageUrl": "http://riteshraj.tech",
           "stargazerCount": 1,
           "forkCount": 0,
-          "pushedAt": "2026-07-04T10:19:21Z",
+          "pushedAt": "2026-07-04T10:19:38Z",
           "primaryLanguage": {
             "name": "TypeScript",
             "color": "#3178c6"
@@ -681,31 +710,6 @@
                 "node": {
                   "name": "TypeScript",
                   "color": "#3178c6"
-                }
-              }
-            ]
-          }
-        },
-        {
-          "id": "R_kgDOSsV5ng",
-          "name": "brut-arch",
-          "description": null,
-          "url": "https://github.com/riteshraj-shetage/brut-arch",
-          "homepageUrl": "",
-          "stargazerCount": 0,
-          "forkCount": 0,
-          "pushedAt": "2026-06-14T16:45:56Z",
-          "primaryLanguage": {
-            "name": "Shell",
-            "color": "#89e051"
-          },
-          "languages": {
-            "edges": [
-              {
-                "size": 2072,
-                "node": {
-                  "name": "Shell",
-                  "color": "#89e051"
                 }
               }
             ]
