@@ -34,7 +34,7 @@ export default function ConnectSec({ socialLinks }: ConnectProps) {
             </span>
           </div>
           
-          <ArrowUpRight className="w-4 h-4 text-muted-foreground group-hover:text-foreground group-hover:translate-x-1 group-hover:-translate-y-1 transition-all shrink-0" />
+          <ArrowUpRight className="w-4 h-4 mb-auto text-muted-foreground group-hover:text-foreground group-hover:translate-x-1 group-hover:-translate-y-1 transition-all shrink-0" />
         </a>
       ))}
       

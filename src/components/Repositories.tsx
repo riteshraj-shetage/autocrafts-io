@@ -7,9 +7,7 @@ type RepositoriesProps = {
 };
 
 export default function Repositories({ repositories }: RepositoriesProps) {
-  if (repositories.length === 0) {
-    return <p className="py-8 font-mono text-xs text-muted-foreground">No repositories synced yet.</p>;
-  }
+  if (!repositories || repositories.length === 0) return null;
 
   const starredRepos = repositories.filter((repo) => repo.stargazerCount > 0);
   const candidateRepos = starredRepos.length > 0 ? starredRepos : repositories;
