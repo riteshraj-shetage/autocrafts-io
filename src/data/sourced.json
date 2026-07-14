@@ -24,12 +24,12 @@
     },
     "yearlyStats": {
       "contributionCalendar": {
-        "totalContributions": 1729
+        "totalContributions": 1743
       }
     },
     "recentActivity": {
       "contributionCalendar": {
-        "totalContributions": 321,
+        "totalContributions": 335,
         "weeks": [
           {
             "contributionDays": [
@@ -537,8 +537,8 @@
               },
               {
                 "date": "2026-07-14",
-                "contributionCount": 0,
-                "contributionLevel": "NONE"
+                "contributionCount": 14,
+                "contributionLevel": "FOURTH_QUARTILE"
               }
             ]
           }
@@ -549,31 +549,6 @@
       "totalCount": 22,
       "nodes": [
         {
-          "id": "R_kgDOSsV5ng",
-          "name": "brut-arch",
-          "description": "Bare-metal Arch Linux installer with dual-boot support",
-          "url": "https://github.com/riteshraj-shetage/brut-arch",
-          "homepageUrl": "",
-          "stargazerCount": 1,
-          "forkCount": 0,
-          "pushedAt": "2026-07-13T09:04:52Z",
-          "primaryLanguage": {
-            "name": "Shell",
-            "color": "#89e051"
-          },
-          "languages": {
-            "edges": [
-              {
-                "size": 18860,
-                "node": {
-                  "name": "Shell",
-                  "color": "#89e051"
-                }
-              }
-            ]
-          }
-        },
-        {
           "id": "R_kgDORvqJ6A",
           "name": "autocrafts-io",
           "description": "Generate real-time GitHub portfolios by username",
@@ -581,7 +556,7 @@
           "homepageUrl": "http://riteshraj.tech",
           "stargazerCount": 1,
           "forkCount": 0,
-          "pushedAt": "2026-07-13T03:36:58Z",
+          "pushedAt": "2026-07-14T14:23:26Z",
           "primaryLanguage": {
             "name": "TypeScript",
             "color": "#3178c6"
@@ -614,6 +589,56 @@
                 "node": {
                   "name": "HTML",
                   "color": "#e34c26"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "R_kgDOS9WnLQ",
+          "name": "octofetch",
+          "description": "Lightweight GitHub Action to fetch telemetry data",
+          "url": "https://github.com/riteshraj-shetage/octofetch",
+          "homepageUrl": "",
+          "stargazerCount": 1,
+          "forkCount": 0,
+          "pushedAt": "2026-07-14T12:28:54Z",
+          "primaryLanguage": {
+            "name": "TypeScript",
+            "color": "#3178c6"
+          },
+          "languages": {
+            "edges": [
+              {
+                "size": 1903,
+                "node": {
+                  "name": "TypeScript",
+                  "color": "#3178c6"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "R_kgDOSsV5ng",
+          "name": "brut-arch",
+          "description": "Bare-metal Arch Linux installer with dual-boot support",
+          "url": "https://github.com/riteshraj-shetage/brut-arch",
+          "homepageUrl": "",
+          "stargazerCount": 1,
+          "forkCount": 0,
+          "pushedAt": "2026-07-14T10:47:05Z",
+          "primaryLanguage": {
+            "name": "Shell",
+            "color": "#89e051"
+          },
+          "languages": {
+            "edges": [
+              {
+                "size": 18836,
+                "node": {
+                  "name": "Shell",
+                  "color": "#89e051"
                 }
               }
             ]
@@ -685,31 +710,6 @@
                 "node": {
                   "name": "JavaScript",
                   "color": "#f1e05a"
-                }
-              }
-            ]
-          }
-        },
-        {
-          "id": "R_kgDOS9WnLQ",
-          "name": "octofetch",
-          "description": "Lightweight GitHub Action to fetch telemetry data",
-          "url": "https://github.com/riteshraj-shetage/octofetch",
-          "homepageUrl": "",
-          "stargazerCount": 1,
-          "forkCount": 0,
-          "pushedAt": "2026-06-24T11:30:38Z",
-          "primaryLanguage": {
-            "name": "TypeScript",
-            "color": "#3178c6"
-          },
-          "languages": {
-            "edges": [
-              {
-                "size": 1903,
-                "node": {
-                  "name": "TypeScript",
-                  "color": "#3178c6"
                 }
               }
             ]
