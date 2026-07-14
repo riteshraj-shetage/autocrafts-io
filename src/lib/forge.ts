@@ -139,63 +139,83 @@ export function forgeStats(rawData: any): DeveloperStats {
   };
 }
 
-export function forgeLanguages(rawData: any): LanguageStat[] {
-  const nodes = rawData.user?.repositories?.nodes || [];
-  const langMap: Record<string, { score: number; color: string }> = {};
-  let totalScore = 0;
 
-  const IGNORED_LANGUAGES = new Set(["HTML", "CSS", "JavaScript", "SCSS", "Sass", "Less"]);
+export function forgeLanguages(rawData: any): LanguageStat[] {
+  const MARKUP_LANGS = new Set(["HTML", "CSS", "SCSS", "Sass", "Less", "Makefile", "Dockerfile"]);
+  const nodes = rawData?.user?.repositories?.nodes || [];
+  const langMap: Record<string, { score: number; color: string }> = {};
+  let totalGlobalScore = 0;
 
   nodes.forEach((repo: any) => {
-    if (!repo.languages || !repo.languages.edges) return;
+    const edges = repo?.languages?.edges;
+    if (!edges || edges.length === 0) return;
 
-    const sortedEdges = [...repo.languages.edges].sort((a: any, b: any) => b.size - a.size);
-    const validEdges = sortedEdges.filter((edge: any) => !IGNORED_LANGUAGES.has(edge.node.name));
+    let validEdges = edges.filter((e: any) => e?.node?.name && !MARKUP_LANGS.has(e.node.name));
+    
+    if (validEdges.length === 0) {
+      validEdges = edges.filter((e: any) => e?.node?.name);
+    }
 
-    validEdges.forEach((edge: any, index: number) => {
-      const name = edge.node.name;
-      const color = edge.node.color;
+    const repoTotalBytes = validEdges.reduce((sum: number, e: any) => sum + (e.size || 0), 0);
+    if (repoTotalBytes === 0) return;
 
-      const weight = 1 / Math.pow(2, index); 
+    const stars = repo.stargazerCount || 0;
+    const repoImportanceMultiplier = 1 + Math.min(stars, 20) * 0.5;
+
+    validEdges.forEach((edge: any) => {
+      const { name, color } = edge.node;
+      const byteShare = (edge.size || 0) / repoTotalBytes;
+      const weightedScore = byteShare * repoImportanceMultiplier;
 
       if (!langMap[name]) {
-        langMap[name] = { score: 0, color: color };
+        langMap[name] = { score: 0, color: color || "#8b949e" };
       }
       
-      langMap[name].score += weight;
-      totalScore += weight;
+      langMap[name].score += weightedScore;
+      totalGlobalScore += weightedScore;
     });
   });
 
-  if (totalScore === 0) return [];
+  if (totalGlobalScore === 0) return [];
 
-  const stats: LanguageStat[] = Object.keys(langMap)
-    .map(name => ({
-      lang: name,
-      percent: (langMap[name].score / totalScore) * 100,
-      color: langMap[name].color
-    }))
-    .sort((a, b) => b.percent - a.percent);
-
-  return stats.slice(0, 6);
+return Object.entries(langMap)
+  .map(([name, data]) => ({
+    lang: name,
+    percent: Math.round((data.score / totalGlobalScore) * 100),
+    color: data.color,
+  }))
+  .filter(stat => stat.percent >= 1)
+  .sort((a, b) => b.percent - a.percent)
+  .slice(0, 6);
 }
 
 export function forgeRepositories(rawData: any): RepositoryData[] {
-  const nodes = rawData.user.repositories.nodes;
+  const nodes = rawData?.user?.repositories?.nodes || [];
 
-  return nodes.map((repo: any) => ({
+  const mappedRepos: RepositoryData[] = nodes.map((repo: any) => ({
     id: repo.id,
     name: repo.name,
     description: repo.description,
     url: repo.url,
     website: repo.homepageUrl,
-    stargazerCount: repo.stargazerCount,
-    forksCount: repo.forkCount,
+    stargazerCount: repo.stargazerCount || 0,
+    forksCount: repo.forkCount || 0,
     pushedAt: repo.pushedAt,
     primaryLanguage: repo.primaryLanguage 
       ? { name: repo.primaryLanguage.name, color: repo.primaryLanguage.color }
       : null,
   }));
+
+  return mappedRepos
+    .sort((a, b) => {
+      if (b.stargazerCount !== a.stargazerCount) {
+        return b.stargazerCount - a.stargazerCount;
+      }
+      const timeA = a.pushedAt ? new Date(a.pushedAt).getTime() : 0;
+      const timeB = b.pushedAt ? new Date(b.pushedAt).getTime() : 0;
+      return timeB - timeA;
+    })
+    .slice(0, 6);
 }
 
 export function forgeSocialLinks(rawData: any): SocialLinks[] {

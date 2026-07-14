@@ -9,27 +9,13 @@ type RepositoriesProps = {
 export default function Repositories({ repositories }: RepositoriesProps) {
   if (!repositories || repositories.length === 0) return null;
 
-  const starredRepos = repositories.filter((repo) => repo.stargazerCount > 0);
-  const candidateRepos = starredRepos.length > 0 ? starredRepos : repositories;
-
-  const topRepos = [...candidateRepos]
-    .sort((a, b) => {
-      if (b.stargazerCount !== a.stargazerCount) {
-        return b.stargazerCount - a.stargazerCount;
-      }
-      const timeA = a.pushedAt ? new Date(a.pushedAt).getTime() : 0;
-      const timeB = b.pushedAt ? new Date(b.pushedAt).getTime() : 0;
-      return timeB - timeA;
-    })
-    .slice(0, 6);
-
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-px">
-      {topRepos.map((repo) => {
+      {repositories.map((repo) => {
         const topLangName = repo.primaryLanguage?.name;
         const topLangColor = repo.primaryLanguage?.color; 
-        const websiteUrl = repo.website; 
-
+        const websiteUrl = repo.website;
+        
         return (
           <a
             key={repo.id}
@@ -76,7 +62,7 @@ export default function Repositories({ repositories }: RepositoriesProps) {
           </a>
         );
       })}
-      {topRepos.length % 2 === 1 && (
+      {repositories.length % 2 === 1 && (
         <div className="bg-background hidden md:block -mr-px -mb-px" aria-hidden />
       )}
     </div>

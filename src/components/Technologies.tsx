@@ -10,12 +10,11 @@ export default function TechnologiesSec({ languageData }: TechnologiesProps) {
   return (
     <div className="border border-border bg-background">
       
-      <div className="p-4 sm:p-5 border-b border-border">
-        <div className="mb-3 font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
-          Most Used Languages
+      <div className="p-3 sm:p-4 border-b border-border">
+        <div className="mb-3 font-mono text-[12px] uppercase tracking-[0.2em] text-muted-foreground">
+          Top Languages
         </div>
         
-        {/* Removed gap-px and used a clean flex row without remainder overflow */}
         <div className="flex h-2.5 w-full border border-border overflow-hidden bg-muted">
           {languageData.map(({ lang, percent, color }) => (
             <div
@@ -30,7 +29,7 @@ export default function TechnologiesSec({ languageData }: TechnologiesProps) {
         </div>
       </div>
 
-      <div className="p-4 sm:p-5">
+      <div className="p-3 sm:p-4">
         <div className="grid grid-cols-1 gap-x-8 gap-y-1 sm:grid-cols-2 xl:grid-cols-3">
           {languageData.map(({ lang, percent, color }) => (
             <div 
