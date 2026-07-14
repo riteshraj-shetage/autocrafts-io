@@ -47,7 +47,7 @@ export default function Repositories({ repositories }: RepositoriesProps) {
                     className="w-2 h-2 shrink-0"
                     style={{ backgroundColor: topLangColor || 'transparent' }}
                   />
-                  <span className="truncate max-w-[100px] sm:max-w-[150px]">{topLangName}</span>
+                  <span className="truncate max-w-25 sm:max-w-38">{topLangName}</span>
                 </span>
               }
 
