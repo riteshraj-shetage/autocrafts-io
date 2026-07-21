@@ -6,7 +6,7 @@ on:
     paths-ignore:
       - "src/data/**" 
   schedule:
-     - cron: '0 0 * * *' 
+    - cron: '30 18 * * *'
   workflow_dispatch:
 
 permissions:
@@ -14,7 +14,7 @@ permissions:
 
 concurrency:
   group: "pages"
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   build-and-deploy:
@@ -23,12 +23,13 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      # 0. Calculate 90day date range
+      # 0. Calculate 90day date range using defined timezone
       - name: Calculate Date Range
         id: dates
         run: |
-          echo "FROM_DATE=$(date -u -d '90 days ago' +'%Y-%m-%dT%H:%M:%SZ')" >> $GITHUB_OUTPUT
-          echo "TO_DATE=$(date -u +'%Y-%m-%dT%H:%M:%SZ')" >> $GITHUB_OUTPUT
+          export TZ="Asia/Kolkata"
+          echo "FROM_DATE=$(date -d '90 days ago' +'%Y-%m-%dT%H:%M:%SZ')" >> $GITHUB_OUTPUT
+          echo "TO_DATE=$(date +'%Y-%m-%dT%H:%M:%SZ')" >> $GITHUB_OUTPUT
 
       # 1. Fetch GitHub data 
       - name: Fetch GitHub Payload
@@ -47,7 +48,7 @@ jobs:
       - name: Commit Payload back to Repository
         run: |
           git config --global user.name "github-actions[bot]"
-          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --global user.email "41898282+github-actions[bot]@://github.com"
           git add src/data/sourced.json
           if ! git diff --cached --quiet; then
             git commit -m "chore: automated payload sync [skip ci]"
@@ -60,15 +61,22 @@ jobs:
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
 
+      # 3b. Setup native Bun caching manually
+      - name: Cache Bun Dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.bun/install/cache
+          key: ${{ runner.os }}-bun-${{ hashFiles('**/bun.lockb', '**/package.json') }}
+          restore-keys: |
+            ${{ runner.os }}-bun-
+
       # 4. Clean install UI dependencies 
       - name: Install Dependencies
         run: bun install --frozen-lockfile
-        working-directory: .
 
       # 5. Compile the React UI 
       - name: Build Application
         run: bun run build
-        working-directory: .
 
       # 6. Deploy natively to gh-pages branch
       - name: Deploy to GitHub Pages

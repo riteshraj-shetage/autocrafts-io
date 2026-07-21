@@ -190,9 +190,10 @@ return Object.entries(langMap)
 }
 
 export function forgeRepositories(rawData: any): RepositoryData[] {
-  const nodes = rawData?.user?.repositories?.nodes || [];
+  const pinnedNodes: any[] = rawData?.user?.pinnedItems?.nodes || [];
+  const repoNodes: any[] = rawData?.user?.repositories?.nodes || [];
 
-  const mappedRepos: RepositoryData[] = nodes.map((repo: any) => ({
+  const mapRepo = (repo: any): RepositoryData => ({
     id: repo.id,
     name: repo.name,
     description: repo.description,
@@ -201,21 +202,36 @@ export function forgeRepositories(rawData: any): RepositoryData[] {
     stargazerCount: repo.stargazerCount || 0,
     forksCount: repo.forkCount || 0,
     pushedAt: repo.pushedAt,
-    primaryLanguage: repo.primaryLanguage 
+    primaryLanguage: repo.primaryLanguage
       ? { name: repo.primaryLanguage.name, color: repo.primaryLanguage.color }
       : null,
-  }));
+  });
 
-  return mappedRepos
-    .sort((a, b) => {
-      if (b.stargazerCount !== a.stargazerCount) {
-        return b.stargazerCount - a.stargazerCount;
-      }
-      const timeA = a.pushedAt ? new Date(a.pushedAt).getTime() : 0;
-      const timeB = b.pushedAt ? new Date(b.pushedAt).getTime() : 0;
-      return timeB - timeA;
-    })
-    .slice(0, 6);
+  if (pinnedNodes.length >= 6) {
+    return pinnedNodes.slice(0, 6).map(mapRepo);
+  }
+
+  const pinned = pinnedNodes.map(mapRepo);
+  const pinnedIds = new Set(pinned.map((r) => r.id));
+
+  const unpinnedRaw = repoNodes.filter(
+    (node: any) => node?.id && !pinnedIds.has(node.id)
+  );
+
+  unpinnedRaw.sort((a: any, b: any) => {
+    const starsA = a.stargazerCount || 0;
+    const starsB = b.stargazerCount || 0;
+    if (starsB !== starsA) return starsB - starsA;
+
+    const dateA = a.pushedAt || '';
+    const dateB = b.pushedAt || '';
+    return dateB.localeCompare(dateA);
+  });
+
+  const needed = 6 - pinned.length;
+  const unpinnedMapped = unpinnedRaw.slice(0, needed).map(mapRepo);
+
+  return [...pinned, ...unpinnedMapped];
 }
 
 export function forgeSocialLinks(rawData: any): SocialLinks[] {
