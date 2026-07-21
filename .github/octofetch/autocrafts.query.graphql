@@ -1,4 +1,11 @@
 query GetDeveloperProfile($owner: String!, $from: DateTime!, $to: DateTime!) {
+  rateLimit {
+    cost
+    nodeCount
+    remaining
+    limit
+    resetAt
+  }
   user(login: $owner) {
     login
     name
