@@ -1,108 +1,108 @@
 query GetDeveloperProfile($owner: String!, $from: DateTime!, $to: DateTime!) {
-  user(login: $owner) {
-    login
-    name
-    avatarUrl
-    company
-    location
-    bio
-    createdAt
-    websiteUrl
-    followers {
-      totalCount
-    }
-    following {
-      totalCount
-    }
+  user(login: $owner) {
+    login
+    name
+    avatarUrl
+    company
+    location
+    bio
+    createdAt
+    websiteUrl
+    followers {
+      totalCount
+    }
+    following {
+      totalCount
+    }
 
-    socialAccounts(first: 10) {
-      nodes {
-        provider
-        url
-      }
-    }
+    socialAccounts(first: 10) {
+      nodes {
+        provider
+        url
+      }
+    }
 
-    yearlyStats: contributionsCollection {
-      contributionCalendar {
-        totalContributions
-      }
-    }
+    yearlyStats: contributionsCollection {
+      contributionCalendar {
+        totalContributions
+      }
+    }
 
-    recentActivity: contributionsCollection(from: $from, to: $to) {
-      contributionCalendar {
-        totalContributions
-        weeks {
-          contributionDays {
-            date
-            contributionCount
-            contributionLevel
-          }
-        }
-      }
-    }
+    recentActivity: contributionsCollection(from: $from, to: $to) {
+      contributionCalendar {
+        totalContributions
+        weeks {
+          contributionDays {
+            date
+            contributionCount
+            contributionLevel
+          }
+        }
+      }
+    }
 
-    pinnedItems(first: 6, types: REPOSITORY) {
-      nodes {
-        ... on Repository {
-          id
-          name
-          description
-          url
-          homepageUrl
-          stargazerCount
-          forkCount
-          pushedAt
-          primaryLanguage {
-            name
-            color
-          }
-          languages(first: 3, orderBy: { field: SIZE, direction: DESC }) {
-            edges {
-              size
-              node {
-                name
-                color
-              }
-            }
-          }
-        }
-      }
-    }
+    pinnedItems(first: 6, types: REPOSITORY) {
+      nodes {
+        ... on Repository {
+          id
+          name
+          description
+          url
+          homepageUrl
+          stargazerCount
+          forkCount
+          pushedAt
+          primaryLanguage {
+            name
+            color
+          }
+          languages(first: 3, orderBy: { field: SIZE, direction: DESC }) {
+            edges {
+              size
+              node {
+                name
+                color
+              }
+            }
+          }
+        }
+      }
+    }
 
-    repositories(
-      first: 25
-      ownerAffiliations: OWNER
-      privacy: PUBLIC
-      isFork: false
-      orderBy: { field: STARGAZERS, direction: DESC }
-    ) {
-      totalCount
-      nodes {
-        id
-        name
-        description
-        url
-        homepageUrl
-        stargazerCount
-        forkCount
-        pushedAt
-        primaryLanguage {
-          name
-          color
-        }
-        languages(first: 3, orderBy: { field: SIZE, direction: DESC }) {
-          edges {
-            size
-            node {
-              name
-              color
-            }
-          }
-        }
-      }
-    }
-  }
-  repository(owner: "riteshraj-shetage", name: "autocrafts-io") {
-    stargazerCount
-  }
+    repositories(
+      first: 25
+      ownerAffiliations: OWNER
+      privacy: PUBLIC
+      isFork: false
+      orderBy: { field: STARGAZERS, direction: DESC }
+    ) {
+      totalCount
+      nodes {
+        id
+        name
+        description
+        url
+        homepageUrl
+        stargazerCount
+        forkCount
+        pushedAt
+        primaryLanguage {
+          name
+          color
+        }
+        languages(first: 3, orderBy: { field: SIZE, direction: DESC }) {
+          edges {
+            size
+            node {
+              name
+              color
+            }
+          }
+        }
+      }
+    }
+  }
+  repository(owner: "riteshraj-shetage", name: "autocrafts-io") {
+    stargazerCount
+  }
 }
