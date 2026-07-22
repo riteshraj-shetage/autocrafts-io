@@ -14,12 +14,11 @@ export default function Repositories({ repositories }: RepositoriesProps) {
       {repositories.map((repo) => {
         const topLangName = repo.primaryLanguage?.name;
         const topLangColor = repo.primaryLanguage?.color; 
-        const websiteUrl = repo.website;
         
         return (
           <a
             key={repo.id}
-            href={websiteUrl || repo.url || "#"}
+            href={repo.url}
             target="_blank"
             rel="noopener noreferrer"
             className="bg-background p-3 sm:p-4 group hover:bg-muted transition-colors flex flex-col justify-between border border-border -mr-px -mb-px"
@@ -27,7 +26,7 @@ export default function Repositories({ repositories }: RepositoriesProps) {
             <div className="flex items-start justify-between gap-3">
               <h3 
                 className="font-mono text-sm font-bold text-foreground line-clamp-2" 
-                title={repo.website || repo.url || repo.name}
+                title={repo.name}
               >
                 {repo.name}
               </h3>

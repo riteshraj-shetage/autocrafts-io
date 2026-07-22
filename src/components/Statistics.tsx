@@ -11,6 +11,12 @@ export default function Statistics({
   totalStars,
   currentStreak,
 }: StatisticsProps) {
+  const isAllZero = [totalRepos, contributions, totalStars, currentStreak].every(
+    (val) => Number(val) === 0 || !val
+  );
+
+  if (isAllZero) return null;
+  
   return (
     <div className="w-full">
       <div className="grid grid-cols-2 md:grid-cols-4">
