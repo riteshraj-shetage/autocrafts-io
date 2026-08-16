@@ -2,9 +2,9 @@
   "rateLimit": {
     "cost": 1,
     "nodeCount": 134,
-    "remaining": 4999,
+    "remaining": 4993,
     "limit": 5000,
-    "resetAt": "2026-08-16T01:31:53Z"
+    "resetAt": "2026-08-16T05:19:50Z"
   },
   "user": {
     "login": "riteshraj-shetage",
@@ -14,7 +14,7 @@
     "location": "Pune, IN",
     "bio": "Python | Linux | Automation",
     "createdAt": "2023-09-05T07:03:28Z",
-    "websiteUrl": "riteshrajshetage.me",
+    "websiteUrl": null,
     "followers": {
       "totalCount": 6
     },
@@ -31,12 +31,12 @@
     },
     "yearlyStats": {
       "contributionCalendar": {
-        "totalContributions": 1732
+        "totalContributions": 1736
       }
     },
     "recentActivity": {
       "contributionCalendar": {
-        "totalContributions": 220,
+        "totalContributions": 224,
         "weeks": [
           {
             "contributionDays": [
@@ -544,8 +544,8 @@
             "contributionDays": [
               {
                 "date": "2026-08-16",
-                "contributionCount": 0,
-                "contributionLevel": "NONE"
+                "contributionCount": 4,
+                "contributionLevel": "SECOND_QUARTILE"
               }
             ]
           }
@@ -731,7 +731,7 @@
           "homepageUrl": "https://riteshraj.tech/?u=octocat",
           "stargazerCount": 1,
           "forkCount": 0,
-          "pushedAt": "2026-08-15T00:30:46Z",
+          "pushedAt": "2026-08-16T00:32:08Z",
           "primaryLanguage": {
             "name": "TypeScript",
             "color": "#3178c6"
@@ -834,7 +834,7 @@
           "homepageUrl": "https://main.dmh3fx6tlcfsz.amplifyapp.com",
           "stargazerCount": 1,
           "forkCount": 0,
-          "pushedAt": "2026-07-01T06:25:28Z",
+          "pushedAt": "2026-08-16T04:28:27Z",
           "primaryLanguage": {
             "name": "Astro",
             "color": "#ff5a03"
@@ -1221,10 +1221,10 @@
           "name": "riteshraj-shetage.github.io",
           "description": "Simple portfolio site to share projects and skills.",
           "url": "https://github.com/riteshraj-shetage/riteshraj-shetage.github.io",
-          "homepageUrl": "https://riteshrajshetage.me",
+          "homepageUrl": "https://riteshraj-shetage.github.io",
           "stargazerCount": 0,
           "forkCount": 0,
-          "pushedAt": "2026-07-30T16:10:56Z",
+          "pushedAt": "2026-08-16T04:29:12Z",
           "primaryLanguage": {
             "name": "HTML",
             "color": "#e34c26"
@@ -1232,7 +1232,7 @@
           "languages": {
             "edges": [
               {
-                "size": 662094,
+                "size": 661584,
                 "node": {
                   "name": "HTML",
                   "color": "#e34c26"
