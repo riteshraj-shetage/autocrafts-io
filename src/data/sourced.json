@@ -2,16 +2,16 @@
   "rateLimit": {
     "cost": 1,
     "nodeCount": 134,
-    "remaining": 4993,
+    "remaining": 4999,
     "limit": 5000,
-    "resetAt": "2026-08-16T05:19:50Z"
+    "resetAt": "2026-08-17T01:30:14Z"
   },
   "user": {
     "login": "riteshraj-shetage",
     "name": "Riteshraj Shetage",
     "avatarUrl": "https://avatars.githubusercontent.com/u/144100040?u=6ed35cdec5137bce385896643ee4e6fc6e584007&v=4",
     "company": "OSS Developer",
-    "location": "Pune, IN",
+    "location": "IN",
     "bio": "Python | Linux | Automation",
     "createdAt": "2023-09-05T07:03:28Z",
     "websiteUrl": null,
@@ -22,16 +22,11 @@
       "totalCount": 2
     },
     "socialAccounts": {
-      "nodes": [
-        {
-          "provider": "LINKEDIN",
-          "url": "https://linkedin.com/in/riteshraj-shetage"
-        }
-      ]
+      "nodes": []
     },
     "yearlyStats": {
       "contributionCalendar": {
-        "totalContributions": 1736
+        "totalContributions": 1724
       }
     },
     "recentActivity": {
@@ -40,11 +35,6 @@
         "weeks": [
           {
             "contributionDays": [
-              {
-                "date": "2026-05-18",
-                "contributionCount": 1,
-                "contributionLevel": "FIRST_QUARTILE"
-              },
               {
                 "date": "2026-05-19",
                 "contributionCount": 1,
@@ -544,8 +534,13 @@
             "contributionDays": [
               {
                 "date": "2026-08-16",
-                "contributionCount": 4,
+                "contributionCount": 5,
                 "contributionLevel": "SECOND_QUARTILE"
+              },
+              {
+                "date": "2026-08-17",
+                "contributionCount": 0,
+                "contributionLevel": "NONE"
               }
             ]
           }
@@ -731,7 +726,7 @@
           "homepageUrl": "https://riteshraj.tech/?u=octocat",
           "stargazerCount": 1,
           "forkCount": 0,
-          "pushedAt": "2026-08-16T00:32:08Z",
+          "pushedAt": "2026-08-16T04:48:46Z",
           "primaryLanguage": {
             "name": "TypeScript",
             "color": "#3178c6"
