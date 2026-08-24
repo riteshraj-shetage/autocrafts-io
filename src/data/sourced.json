@@ -2,17 +2,17 @@
   "rateLimit": {
     "cost": 1,
     "nodeCount": 134,
-    "remaining": 4999,
+    "remaining": 4972,
     "limit": 5000,
-    "resetAt": "2026-08-23T01:33:01Z"
+    "resetAt": "2026-08-24T00:45:55Z"
   },
   "user": {
     "login": "riteshraj-shetage",
     "name": "Riteshraj Shetage",
     "avatarUrl": "https://avatars.githubusercontent.com/u/144100040?u=6ed35cdec5137bce385896643ee4e6fc6e584007&v=4",
-    "company": "OSS Developer",
+    "company": null,
     "location": "IN",
-    "bio": "Python | Linux | Automation",
+    "bio": "OSS developer",
     "createdAt": "2023-09-05T07:03:28Z",
     "websiteUrl": null,
     "followers": {
@@ -26,20 +26,15 @@
     },
     "yearlyStats": {
       "contributionCalendar": {
-        "totalContributions": 1731
+        "totalContributions": 1714
       }
     },
     "recentActivity": {
       "contributionCalendar": {
-        "totalContributions": 206,
+        "totalContributions": 203,
         "weeks": [
           {
             "contributionDays": [
-              {
-                "date": "2026-05-25",
-                "contributionCount": 4,
-                "contributionLevel": "SECOND_QUARTILE"
-              },
               {
                 "date": "2026-05-26",
                 "contributionCount": 2,
@@ -539,6 +534,11 @@
             "contributionDays": [
               {
                 "date": "2026-08-23",
+                "contributionCount": 1,
+                "contributionLevel": "FIRST_QUARTILE"
+              },
+              {
+                "date": "2026-08-24",
                 "contributionCount": 0,
                 "contributionLevel": "NONE"
               }
@@ -616,9 +616,9 @@
         {
           "id": "R_kgDOS9WnLQ",
           "name": "octofetch",
-          "description": "Lightweight GitHub Action to fetch telemetry data",
+          "description": "Bun-native Action to execute GitHub GraphQL and dump JSON",
           "url": "https://github.com/riteshraj-shetage/octofetch",
-          "homepageUrl": "",
+          "homepageUrl": "https://github.com/marketplace/actions/octofetch",
           "stargazerCount": 1,
           "forkCount": 0,
           "pushedAt": "2026-08-20T17:38:41Z",
@@ -671,9 +671,9 @@
         {
           "id": "R_kgDOS9WnLQ",
           "name": "octofetch",
-          "description": "Lightweight GitHub Action to fetch telemetry data",
+          "description": "Bun-native Action to execute GitHub GraphQL and dump JSON",
           "url": "https://github.com/riteshraj-shetage/octofetch",
-          "homepageUrl": "",
+          "homepageUrl": "https://github.com/marketplace/actions/octofetch",
           "stargazerCount": 1,
           "forkCount": 0,
           "pushedAt": "2026-08-20T17:38:41Z",
@@ -721,12 +721,12 @@
         {
           "id": "R_kgDORvqJ6A",
           "name": "autocrafts-io",
-          "description": "Generate GitHub portfolios, on-the-fly",
+          "description": "GitHub portfolios, on the fly",
           "url": "https://github.com/riteshraj-shetage/autocrafts-io",
           "homepageUrl": "https://riteshraj.tech/?u=octocat",
           "stargazerCount": 1,
           "forkCount": 0,
-          "pushedAt": "2026-08-22T00:30:34Z",
+          "pushedAt": "2026-08-23T00:33:10Z",
           "primaryLanguage": {
             "name": "TypeScript",
             "color": "#3178c6"
